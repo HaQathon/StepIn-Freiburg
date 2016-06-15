@@ -38,8 +38,14 @@ object HeaderFooterForm: THeaderFooterForm
     Size.Width = 89.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 3
+    TabOrder = 2
     Text = 'Button1'
     OnClick = Button1Click
+  end
+  object CheckBox1: TCheckBox
+    Position.X = 112.000000000000000000
+    Position.Y = 376.000000000000000000
+    TabOrder = 4
+    Text = 'CheckBox1'
   end
 end
