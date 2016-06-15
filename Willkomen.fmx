@@ -1,0 +1,48 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 733
+  ClientWidth = 507
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object ImageControl1: TImageControl
+    Position.Y = -8.000000000000000000
+    Size.Width = 505.000000000000000000
+    Size.Height = 745.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    StyledSettings = [Style, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 481.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Roboto Cn'
+    TextSettings.Font.Size = 40.000000000000000000
+    Text = 'Willkomen zu StepIn Freiburg'
+  end
+  object Button1: TButton
+    StyledSettings = [Style, FontColor]
+    Position.X = 142.000000000000000000
+    Position.Y = 600.000000000000000000
+    Size.Width = 217.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Los  geht'#180's'
+    TextSettings.Font.Family = 'Roboto Cn'
+    TextSettings.Font.Size = 20.000000000000000000
+    TintColor = claGreen
+    object ColorAnimation1: TColorAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'TintColor'
+      StartValue = claWhite
+      StopValue = claWhite
+    end
+  end
+end
