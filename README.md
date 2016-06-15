@@ -1,2 +1,2 @@
 # StepIn-Freiburg
-Helpps you to get into Freiburg - Step by Step
+Helps you feel home - step by step
