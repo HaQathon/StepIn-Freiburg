@@ -1,4 +1,4 @@
-object FMain: TFMain
+object HeaderFooterForm: THeaderFooterForm
   Left = 0
   Top = 0
   Caption = 'Header Footer Form'
@@ -38,14 +38,8 @@ object FMain: TFMain
     Size.Width = 89.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 2
+    TabOrder = 3
     Text = 'Button1'
     OnClick = Button1Click
-  end
-  object CheckBox1: TCheckBox
-    Position.X = 112.000000000000000000
-    Position.Y = 376.000000000000000000
-    TabOrder = 4
-    Text = 'CheckBox1'
   end
 end
