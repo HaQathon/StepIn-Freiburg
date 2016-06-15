@@ -1,4 +1,4 @@
-object HeaderFooterForm: THeaderFooterForm
+object FMain: TFMain
   Left = 0
   Top = 0
   Caption = 'Header Footer Form'

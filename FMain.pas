@@ -1,4 +1,4 @@
-unit HeaderFooterTemplate;
+unit FMain;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation;
 
 type
-  THeaderFooterForm = class(TForm)
+  TFMain = class(TForm)
     Header: TToolBar;
     Footer: TToolBar;
     HeaderLabel: TLabel;
@@ -22,13 +22,13 @@ type
   end;
 
 var
-  HeaderFooterForm: THeaderFooterForm;
+  vFMain: TFMain;
 
 implementation
 
 {$R *.fmx}
 
-procedure THeaderFooterForm.Button1Click(Sender: TObject);
+procedure TFMain.Button1Click(Sender: TObject);
 begin
  ShowMessage('test');
 end;
