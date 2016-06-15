@@ -1,4 +1,4 @@
-﻿object HeaderFooterForm: THeaderFooterForm
+object HeaderFooterForm: THeaderFooterForm
   Left = 0
   Top = 0
   Caption = 'Header Footer Form'
@@ -6,26 +6,40 @@
   ClientWidth = 384
   FormFactor.Width = 1440
   FormFactor.Height = 900
-  FormFactor.Devices = [dkDesktop]
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
   object Header: TToolBar
-    Height = 48.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 0
-    Width = 384.000000000000000000
     object HeaderLabel: TLabel
-      Align = alContents
-      Height = 48.000000000000000000
+      Align = Contents
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
       StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
       Text = 'Title'
-      TextAlign = taCenter
-      Width = 384.000000000000000000
     end
   end
   object Footer: TToolBar
-    Align = alBottom
-    Height = 48.000000000000000000
-    Position.Y = 523.000000000000000000
+    Align = Bottom
+    Position.Y = 519.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
     StyleLookup = 'bottomtoolbar'
     TabOrder = 1
-    Width = 384.000000000000000000
+  end
+  object Button1: TButton
+    Position.X = 152.000000000000000000
+    Position.Y = 240.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Button1'
+    OnClick = Button1Click
   end
 end
