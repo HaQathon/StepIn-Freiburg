@@ -9,12 +9,11 @@ uses
 
 type
   TForm1 = class(TForm)
-    Button1: TButton;
-    ColorAnimation1: TColorAnimation;
     Label1: TLabel;
     Image1: TImage;
     Label2: TLabel;
     Label4: TLabel;
+    Image2: TImage;
     procedure Button1Click(Sender: TObject);
   private
     { Private-Deklarationen }
