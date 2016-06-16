@@ -28,6 +28,10 @@ implementation
 
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.Surface.fmx MSWINDOWS}
+{$R *.iPad.fmx IOS}
+{$R *.GGlass.fmx ANDROID}
+{$R *.Moto360.fmx ANDROID}
 
 procedure TForm1.Button1Click(Sender: TObject);
    var

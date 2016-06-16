@@ -1,27 +1,19 @@
-inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
-  ClientHeight = 695
-  ClientWidth = 450
+inherited Form1_GGlass: TForm1_GGlass
+  ClientHeight = 215
+  ClientWidth = 427
   DesignerMasterStyle = 3
   inherited Label1: TLabel
-    Position.X = 16.000000000000000000
-    Position.Y = 512.000000000000000000
-    Size.Width = 329.000000000000000000
-    Size.Height = 73.000000000000000000
+    Position.Y = 124.863571166992200000
   end
   inherited Image1: TImage
     MultiResBitmap.Height = 610
     MultiResBitmap.Width = 1024
   end
   inherited Label2: TLabel
-    Position.X = 16.000000000000000000
-    Position.Y = 456.000000000000000000
+    Position.Y = 105.611183166503900000
   end
   inherited Label4: TLabel
-    Position.X = 16.000000000000000000
-    Position.Y = 568.000000000000000000
-    Size.Width = 337.000000000000000000
-    Size.Height = 97.000000000000000000
-    Text = 'Just answer some questions to get started'
+    Position.Y = 146.942703247070300000
   end
   inherited Image2: TImage
     MultiResBitmap.Height = 350
@@ -384,10 +376,7 @@ inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
           00000049454E44AE426082}
         FileName = 'C:\Users\winne\Desktop\pinkbutton.png'
       end>
-    Position.X = 360.000000000000000000
-    Position.Y = 608.000000000000000000
-    Size.Width = 65.000000000000000000
-    Size.Height = 65.000000000000000000
-    Size.PlatformDefault = False
+    Position.X = 320.000000000000000000
+    Position.Y = 130.000000000000000000
   end
 end

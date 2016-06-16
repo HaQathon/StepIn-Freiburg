@@ -6,13 +6,16 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView, FMX.MultiView;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView, FMX.MultiView, FMX.Edit,
+  FMX.Objects;
 
 type
   TForm2 = class(TForm)
     ListView1: TListView;
-    Button1: TButton;
     MultiView1: TMultiView;
+    Edit1: TEdit;
+    ListView2: TListView;
+    Image1: TImage;
   private
     { Private-Deklarationen }
   public
