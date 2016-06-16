@@ -2,4 +2,16 @@ inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
   ClientHeight = 695
   ClientWidth = 450
   DesignerMasterStyle = 3
+  inherited ListView1: TListView
+    Position.X = 32.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 377.000000000000000000
+    Size.Height = 561.000000000000000000
+  end
+  inherited Button1: TButton
+    Position.X = 224.000000000000000000
+    Position.Y = 608.000000000000000000
+    Size.Width = 201.000000000000000000
+    Text = 'Neuer Task Hinzuf'#252'gen'
+  end
 end
