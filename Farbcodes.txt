@@ -1,0 +1,2 @@
+Main Color Indigo: #3F51B5
+Accent Color: #E91E63 
