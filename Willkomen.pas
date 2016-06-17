@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,Fmain, FMX.Objects;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,Fmain, FMX.Objects,  FMX.Platform;
 
 type
   TFWillkomen = class(TForm)
@@ -28,11 +28,7 @@ var
 implementation
 
 {$R *.fmx}
-{$R *.LgXhdpiPh.fmx ANDROID}
-{$R *.Surface.fmx MSWINDOWS}
-{$R *.iPad.fmx IOS}
-{$R *.GGlass.fmx ANDROID}
-{$R *.Moto360.fmx ANDROID}
+
 //Dieses From soll als Startbildschrim verwendet werden
 
 procedure TFWillkomen.Button1Click(Sender: TObject);
@@ -45,8 +41,11 @@ procedure TFWillkomen.Button1Click(Sender: TObject);
 procedure TFWillkomen.FormCreate(Sender: TObject);
    var
     Sprache : TSysLocale;
+    Device  : TPlatformServices;
    begin
-    if not SaveState = nil then
+    Device :=  TPlatformServices.Create;
+    //hier soll der Savesate ausgelesen werden um zu prüfen ob dies der erste App start ist
+    (*if not   then
        begin
         btnStart.Visible := false;
        end
@@ -54,12 +53,13 @@ procedure TFWillkomen.FormCreate(Sender: TObject);
        begin
         btnStart.Visible := true;
        end;
-    if  Sprache.PriLangID :=  then
+
+    if  Sprache.PriLangID =  LANG_ENGLISH then
        begin
         //hier abfragen welche sprache verwendet wird
 
        end;
-
+       *)
    end;
 
 end.
