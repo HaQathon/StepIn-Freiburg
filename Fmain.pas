@@ -21,7 +21,7 @@ type
     btn_OpenMultiView: TButton;
     head_Mview: THeader;
     Button1: TButton;
-    lbl_MultiView: TLabel;
+    Aufgaben: TLabel;
     procedure btn_OpenMultiviewClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private
@@ -41,13 +41,14 @@ implementation
 
 procedure TForm2.btn_OpenMultiviewClick(Sender: TObject);
  begin
-  MultiView1.ShowMaster
+  MultiView1.ShowMaster;
  end;
 
 
 procedure TForm2.Button1Click(Sender: TObject);
  begin
   MultiView1.HideMaster;
+
  end;
 
 end.
