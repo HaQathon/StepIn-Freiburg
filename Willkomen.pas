@@ -41,5 +41,5 @@ procedure TForm1.Button1Click(Sender: TObject);
     Main.Show;
     //ich bin ein Bieber von TBieber
    end;
-
+   //Kommentar jrf
 end.
