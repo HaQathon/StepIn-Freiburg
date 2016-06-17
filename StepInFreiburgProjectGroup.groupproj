@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6561CBF9-0B95-4B5F-8203-941E923C9263}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="StepInFreiburg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\StepIn-Webservice\StepInWebservice.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\StepIn-Webservice\Testclient\StepInTestClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="StepInFreiburg">
+        <MSBuild Projects="StepInFreiburg.dproj"/>
+    </Target>
+    <Target Name="StepInFreiburg:Clean">
+        <MSBuild Projects="StepInFreiburg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StepInFreiburg:Make">
+        <MSBuild Projects="StepInFreiburg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StepInWebservice">
+        <MSBuild Projects="..\StepIn-Webservice\StepInWebservice.dproj"/>
+    </Target>
+    <Target Name="StepInWebservice:Clean">
+        <MSBuild Projects="..\StepIn-Webservice\StepInWebservice.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StepInWebservice:Make">
+        <MSBuild Projects="..\StepIn-Webservice\StepInWebservice.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StepInTestClient">
+        <MSBuild Projects="..\StepIn-Webservice\Testclient\StepInTestClient.dproj"/>
+    </Target>
+    <Target Name="StepInTestClient:Clean">
+        <MSBuild Projects="..\StepIn-Webservice\Testclient\StepInTestClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StepInTestClient:Make">
+        <MSBuild Projects="..\StepIn-Webservice\Testclient\StepInTestClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="StepInFreiburg;StepInWebservice;StepInTestClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="StepInFreiburg:Clean;StepInWebservice:Clean;StepInTestClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="StepInFreiburg:Make;StepInWebservice:Make;StepInTestClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
