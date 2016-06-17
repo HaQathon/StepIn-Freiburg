@@ -40,5 +40,5 @@ procedure TForm1.Button1Click(Sender: TObject);
     Main := TForm2.Create(Self);
     Main.Show;
    end;
-
+   //Kommentar jrf
 end.
