@@ -39,6 +39,7 @@ procedure TForm1.Button1Click(Sender: TObject);
    begin
     Main := TForm2.Create(Self);
     Main.Show;
+    //ich bin ein Bieber von TBieber
    end;
 
 end.
