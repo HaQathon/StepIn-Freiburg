@@ -8,13 +8,14 @@ uses
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,Fmain, FMX.Objects;
 
 type
-  TForm1 = class(TForm)
-    Label1: TLabel;
+  TFWillkomen = class(TForm)
+    lblStepIn: TLabel;
     Image1: TImage;
-    Label2: TLabel;
-    Label4: TLabel;
-    Image2: TImage;
+    lblWilkommen: TLabel;
+    lblFragen: TLabel;
+    btnStart: TImage;
     procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -22,7 +23,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FWillkomen: TFWillkomen;
 
 implementation
 
@@ -32,14 +33,33 @@ implementation
 {$R *.iPad.fmx IOS}
 {$R *.GGlass.fmx ANDROID}
 {$R *.Moto360.fmx ANDROID}
+//Dieses From soll als Startbildschrim verwendet werden
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TFWillkomen.Button1Click(Sender: TObject);
    var
     Main : TForm2;
    begin
-    Main := TForm2.Create(Self);
+    Main := TForm2.Create(Self); //hier soll die Fragen geöffnet werden
     Main.Show;
-    //ich bin ein Bieber von TBieber
    end;
-   //Kommentar jrf
+procedure TFWillkomen.FormCreate(Sender: TObject);
+   var
+    Sprache : TSysLocale;
+   begin
+    if not SaveState = nil then
+       begin
+        btnStart.Visible := false;
+       end
+    else
+       begin
+        btnStart.Visible := true;
+       end;
+    if  Sprache.PriLangID :=  then
+       begin
+        //hier abfragen welche sprache verwendet wird
+
+       end;
+
+   end;
+
 end.
