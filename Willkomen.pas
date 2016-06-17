@@ -14,7 +14,6 @@ type
     Label2: TLabel;
     Label4: TLabel;
     Image2: TImage;
-    Button1: TButton;
     procedure Button1Click(Sender: TObject);
   private
     { Private-Deklarationen }
