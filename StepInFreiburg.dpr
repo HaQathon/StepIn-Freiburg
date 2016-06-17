@@ -10,6 +10,6 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFWillkomen, FWillkomen);
   Application.Run;
 end.
