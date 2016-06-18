@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView, FMX.MultiView, FMX.Edit,
-  FMX.Objects, FMX.Header, uTask, FMX.ListBox, FMX.Layouts ;
+  FMX.Objects, FMX.Header, uTask, FMX.ListBox, FMX.Layouts, System.Generics.Collections ;
 
 type
   TformMain = class(TForm)
@@ -38,10 +38,13 @@ type
     procedure lbiKinderClick(Sender: TObject);
     procedure lbiHaustiereClick(Sender: TObject);
     procedure lbiAusweiseClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private-Deklarationen }
+    aufgabenListe: TList<TTask>;
   public
     { Public-Deklarationen }
+    procedure aufgabenHinzufuegen();
   end;
 
 var
@@ -65,6 +68,28 @@ procedure TformMain.Button1Click(Sender: TObject);
  begin
   MultiView1.HideMaster;
  end;
+
+procedure TformMain.FormCreate(Sender: TObject);
+var
+   tempTask: TTask;
+begin
+   tempTask := TTask.Create;
+   tempTask.taskName := 'taskName';
+   tempTask.taskInfo := 'TaskInfo';
+   temptask.addtodatabase;
+end;
+
+procedure TformMain.aufgabenHinzufuegen();
+   var
+     tempTask: TTask;
+  begin
+   aufgabenListe := TList<TTask>.Create;
+   aufgabenListe := TaskDatenbank.getAllTasks();
+   for tempTask in aufgabenListe do
+      begin
+       Listbox2.Items.Add('test');
+      end;
+   end;
 
 procedure TformMain.Image1Click(Sender: TObject);
   begin
