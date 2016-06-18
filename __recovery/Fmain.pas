@@ -59,17 +59,12 @@ var
   list:TList<TTask>;
   i:Integer;
   item: TListViewItem;
-  dmy:TTask;
   begin
   task:= uTask.TTaskDatenbank.Create(uTask.TTaskDatenbank.cTABLE_NAME);
   list:=task.getAllTasks;
-  dmy:=TTask.Create;
-  dmy.taskName:='asdasd';
-  list.Add(dmy);
     for i := 0 to list.Count-1 do  begin
       item:=ListView1.Items.Add;
       item.Text:=list.Items[i].taskName;
-
     end;
 
   end;
