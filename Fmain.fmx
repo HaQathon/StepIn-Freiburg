@@ -399,7 +399,7 @@ object Form2: TForm2
       Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
-      StyleLookup = 'drawertoolbutton'
+      StyleLookup = 'priortoolbutton'
       TabOrder = 3
       Text = 'Button1'
       OnClick = Button1Click

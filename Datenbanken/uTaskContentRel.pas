@@ -32,7 +32,7 @@ type
     procedure updateByAttributRelId(AttributRel: TTaskContentRel);
     function sucheEintraege(Suche: String): TObjectList<TTaskContentRel>;
     function getAllAttribute: TList<TTaskContentRel>;
-    procedure deleteByAttributRelId(attributRelId: integer);
+    procedure deleteByAttributRelId(contentRelId: integer);
     function getLastAttributRel: TTaskContentRel;
     function get(const ID: Integer): TTaskContentRel;
 
@@ -42,7 +42,7 @@ type
     const cTABLE_NAME = 'AttributRel';
     const cID = 'id';
     const cTASK_ID = 'taskID';
-    const cATTRIBUT_ID = 'attributID';
+    const cATTRIBUT_ID = 'contentID';
   end;
 
 var taskContentRelDatenbank: TTaskContentRelDatenbank;
@@ -97,7 +97,7 @@ procedure TTaskContentRel.fillFields(query: TUniQuery);
    begin
     id := query.FieldByName(taskContentRelDatenbank.cID).AsInteger;
     taskID := query.FieldByName(taskContentRelDatenbank.cTASK_ID).AsInteger;
-    attributID := query.FieldByName(taskContentRelDatenbank.cATTRIBUT_ID).AsInteger;
+    contentID := query.FieldByName(taskContentRelDatenbank.cATTRIBUT_ID).AsInteger;
 
    end;
 
@@ -206,9 +206,9 @@ procedure TTaskContentRel.addToDatabase;
 
 { ============================================================================ }
 
-procedure TTaskContentRelDatenbank.DeleteByAttributRelId(attributRelId: integer);
+procedure TTaskContentRelDatenbank.DeleteByAttributRelId(contentRelId: integer);
    begin
-    Delete(cID+'='+#39+attributRelId.ToString+#39);
+    Delete(cID+'='+#39+contentRelId.ToString+#39);
    end;
 
 { ============================================================================ }
