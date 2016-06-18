@@ -1,4 +1,4 @@
-unit uTaskContentRel;
+unit uContent;
 
 interface
 
@@ -7,16 +7,16 @@ uses
   UTableBase,
   System.Generics.Collections;
 type
-  TTaskContentRel = class(TEntityBase)
+  TContent = class(TEntityBase)
   private // Felder private, durch property veröffentlichen
     fId: Integer;
     fTaskID: Integer;
-    fContentID: Integer;
+    fcontent: String;
 
   public
     property id: integer read fID write fID;
     property taskID: integer read fTaskID write fTaskID;
-    property contentID: integer read fContentID write fContentID;
+    property content: String read fcontent write fcontent;
 
     procedure fillFields(query: TUniQuery);
     procedure addToDatabase;
@@ -24,27 +24,27 @@ type
     procedure fillParamsOfQuery(query: TUniQuery); override;
   end;
 
-  TTaskContentRelDatenbank = class(TTableBase)
+  TContentDatenbank = class(TTableBase)
   public
     constructor Create(const Database: string);
 //    procedure addToDatabase(Attribut: TAttribut);
-    procedure updateByAttributRelId(AttributRel: TTaskContentRel);
-    function sucheEintraege(Suche: String): TObjectList<TTaskContentRel>;
-    function getAllTaskContentRel: TList<TTaskContentRel>;
-    procedure deleteByTaskContentRelId(contentRelId: integer);
-    function getLastTaskContentRel: TTaskContentRel;
-    function get(const ID: Integer): TTaskContentRel;
+    procedure updateByContentId(TaskContent: TContent);
+    function sucheEintraege(Suche: String): TObjectList<TContent>;
+    function getAllContent: TList<TContent>;
+    procedure deleteByContentId(contentId: integer);
+    function getLastTaskContentRel: TContent;
+    function get(const ID: Integer): TContent;
 
     function getTableName: String;override;
     procedure getColumnNames(columnList: TList<String>);override;
 
-    const cTABLE_NAME = 'AttributRel';
+    const cTABLE_NAME = 'Content';
     const cID = 'id';
     const cTASK_ID = 'taskID';
-    const cCONTENT_ID = 'contentID';
+    const cContent = 'content';
   end;
 
-var taskContentRelDatenbank: TTaskContentRelDatenbank;
+var ContentDatenbank: TContentDatenbank;
 
 
 implementation
@@ -53,12 +53,12 @@ uses uSQLConnection,System.SysUtils,System.IOUtils;
 
 const
   AUTHORITY = '';
-  BASE_PATH_TASKCONTENTREL = 'AttributRel';
+  BASE_PATH_TASKCONTENTREL = 'Content';
   CONTENT_URI_TASKCONTENTREL= BASE_PATH_TASKCONTENTREL ;
 
 { ============================================================================ }
 
-constructor TTaskContentRelDatenbank.Create(const Database: string);
+constructor TContentDatenbank.Create(const Database: string);
    begin
     FSQLConnection := TSQLConnection.Create(ctSQLite);
     FSQLConnection.Database := Database;
@@ -71,47 +71,47 @@ constructor TTaskContentRelDatenbank.Create(const Database: string);
     FSQLConnection.ExecSQL('CREATE TABLE IF NOT EXISTS ' + cTABLE_NAME + ' ( ' +
        cID + ' INTEGER PRIMARY KEY AUTOINCREMENT, ' +
        cTASK_ID+ ' INTEGER NOT NULL, ' +
-       cCONTENT_ID + ' INTEGER NOT NULL' + ')');
+       cContent + ' Text NOT NULL' + ')');
   end;
 
 { ============================================================================ }
 
-procedure TTaskContentRelDatenbank.getColumnNames(columnList: TList<String>);
+procedure TContentDatenbank.getColumnNames(columnList: TList<String>);
    begin
     columnList.Add(cID);
     columnList.Add(cTASK_ID);
-    columnList.Add(cCONTENT_ID);
+    columnList.Add(cContent);
    end;
 
 { ============================================================================ }
 
-function TTaskContentRelDatenbank.getTableName: String;
+function TContentDatenbank.getTableName: String;
    begin
     result := cTABLE_NAME;
    end;
 
 { ============================================================================ }
 
-procedure TTaskContentRel.fillFields(query: TUniQuery);
+procedure TContent.fillFields(query: TUniQuery);
    begin
-    id := query.FieldByName(taskContentRelDatenbank.cID).AsInteger;
-    taskID := query.FieldByName(taskContentRelDatenbank.cTASK_ID).AsInteger;
-    contentID := query.FieldByName(taskContentRelDatenbank.cCONTENT_ID).AsInteger;
+    id := query.FieldByName(ContentDatenbank.cID).AsInteger;
+    taskID := query.FieldByName(ContentDatenbank.cTASK_ID).AsInteger;
+    content := query.FieldByName(ContentDatenbank.cContent).AsString;
 
    end;
 
 { ============================================================================ }
 
-procedure TTaskContentRel.fillParamsOfQuery(query: TUniQuery);
+procedure TContent.fillParamsOfQuery(query: TUniQuery);
    begin
-    query.ParamByName(taskContentRelDatenbank.cID).AsInteger := id;
-    query.ParamByName(taskContentRelDatenbank.cTASK_ID).AsInteger := taskID;
-    query.ParamByName(taskContentRelDatenbank.cCONTENT_ID).AsInteger := contentID;
+    query.ParamByName(ContentDatenbank.cID).AsInteger := id;
+    query.ParamByName(ContentDatenbank.cTASK_ID).AsInteger := taskID;
+    query.ParamByName(ContentDatenbank.cContent).AsString  := content;
    end;
 
 { ============================================================================ }
 
-procedure TTaskContentRelDatenbank.updateByAttributRelId(AttributRel: TTaskContentRel);
+procedure TContentDatenbank.updateByContentId(TaskContent: TContent);
   var
     query: TUniQuery;
   begin
@@ -124,8 +124,8 @@ procedure TTaskContentRelDatenbank.updateByAttributRelId(AttributRel: TTaskConte
        ' WHERE ' + cID + '=:' + cID;;
       query.Prepare;
 
-      query.ParamByName(cID).AsInteger := AttributRel.id;
-      AttributRel.fillParamsOfQuery(query);
+      query.ParamByName(cID).AsInteger := TaskContent.id;
+      TaskContent.fillParamsOfQuery(query);
 
       query.Execute;
     finally
@@ -136,13 +136,13 @@ procedure TTaskContentRelDatenbank.updateByAttributRelId(AttributRel: TTaskConte
 
 { ============================================================================ }
 
-function TTaskContentRelDatenbank.sucheEintraege(Suche: String): TObjectList<TTaskContentRel>;
+function TContentDatenbank.sucheEintraege(Suche: String): TObjectList<TContent>;
   var
     query: TUniQuery;
-    tmpObj: TTaskContentRel;
+    tmpObj: TContent;
     tmpSQL: String;
    begin
-    result := TObjectList<TTaskContentRel>.Create(True);
+    result := TObjectList<TContent>.Create(True);
     query := TUniQuery.Create(nil);
     try
       query.connection := FSQLConnection;
@@ -155,7 +155,7 @@ function TTaskContentRelDatenbank.sucheEintraege(Suche: String): TObjectList<TTa
 
       while not(query.Eof) do
       begin
-        tmpObj := TTaskContentRel.Create;
+        tmpObj := TContent.Create;
         tmpObj.fillFields(query);
         result.Add(tmpObj);
         query.Next;
@@ -168,9 +168,9 @@ function TTaskContentRelDatenbank.sucheEintraege(Suche: String): TObjectList<TTa
 
 { ============================================================================ }
 
-function TTaskContentRelDatenbank.get(const ID: Integer): TTaskContentRel;
+function TContentDatenbank.get(const ID: Integer): TContent;
    var
-    List: TList<TTaskContentRel>;
+    List: TList<TContent>;
    begin
     List := sucheEintraege(cID + '=' + ID.ToString());
     try
@@ -183,19 +183,19 @@ function TTaskContentRelDatenbank.get(const ID: Integer): TTaskContentRel;
 
 { ============================================================================ }
 
-function TTaskContentRelDatenbank.getAllTaskContentRel: TList<TTaskContentRel>;
+function TContentDatenbank.getAllContent: TList<TContent>;
    begin
     result := sucheEintraege('');
    end;
 
 { ============================================================================ }
 
-procedure TTaskContentRel.addToDatabase;
+procedure TContent.addToDatabase;
    var
-    tmpTaskContentRel: TTaskContentRel;
+    tmpTaskContentRel: TContent;
    begin
-    taskContentRelDatenbank.addToDatabase(Self);
-    tmpTaskContentRel := taskContentRelDatenbank.getLastTaskContentRel;
+    ContentDatenbank.addToDatabase(Self);
+    tmpTaskContentRel := ContentDatenbank.getLastTaskContentRel;
     try
       id := tmpTaskContentRel.id;
     finally
@@ -205,18 +205,18 @@ procedure TTaskContentRel.addToDatabase;
 
 { ============================================================================ }
 
-procedure TTaskContentRelDatenbank.DeleteByTaskContentRelId(contentRelId: integer);
+procedure TContentDatenbank.deleteByContentId(contentId: integer);
    begin
-    Delete(cID+'='+#39+contentRelId.ToString+#39);
+    Delete(cID+'='+#39+contentId.ToString+#39);
    end;
 
 { ============================================================================ }
 
-function TTaskContentRelDatenbank.getLastTaskContentRel: TTaskContentRel;
+function TContentDatenbank.getLastTaskContentRel: TContent;
    var
     query: TUniQuery;
   begin
-    result := TTaskContentRel.Create;
+    result := TContent.Create;
     query := TUniQuery.Create(nil);
 
     try
@@ -242,13 +242,13 @@ function TTaskContentRelDatenbank.getLastTaskContentRel: TTaskContentRel;
 { ============================================================================ }
 
 initialization
-  taskContentRelDatenbank := TTaskContentRelDatenbank.Create(TPath.Combine(getHomePath(), CONTENT_URI_TASKCONTENTREL));
+  ContentDatenbank := TContentDatenbank.Create(TPath.Combine(getHomePath(), CONTENT_URI_TASKCONTENTREL));
 
 { ============================================================================ }
 
 
 finalization
-  taskContentRelDatenbank.Free;
+  ContentDatenbank.Free;
 
 
 end.
