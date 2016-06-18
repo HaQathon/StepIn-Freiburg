@@ -1,0 +1,34 @@
+Content_WohnungAnmelden
+
+<h1>Wohnung Anmelden</h1>
+<body>
+<h2>Verfahrensablauf</h2>
+Um sich anzumelden, müssen Sie in der Regel persönlich bei der Meldebehörde erscheinen.
+Die Meldebehörde erfasst Ihre neuen Daten und legt Ihnen einen Ausdruck der Daten vor. 
+Die Richtigkeit und Vollständigkeit Ihrer Daten bestätigen Sie mit Ihrer Unterschrift auf dem Ausdruck. 
+Hat die Meldebehörde zur Erfüllung der Meldepflicht einen Internetzugang eröffnet, 
+können Sie die erforderlichen Daten auch unter Verwendung einer qualifizierten elektronischen Signatur übermitteln. 
+Eine formlose E-Mail reicht nicht aus.
+Sie können Ihre Familienangehörigen ebenfalls anmelden, 
+wenn diese mit Ihnen bisher in der gleichen Wohnung gewohnt haben und mit Ihnen umziehen.
+
+<h2>Erforderliche Unterlagen</h2>
+
+Die Meldebehörde kann von Ihnen weitere Unterlagen verlangen. Dies sind in der Regel:
+•	Personalausweis oder Reisepass
+•	Ausweise der Familienangehörigen: Für Kinder, die keinen Kinderreisepass besitzen, müssen Sie die Geburtsurkunde vorlegen.
+•	Bescheinigung des Wohnungsgebers
+
+Tipp: Sie können gleichzeitig mit der Wohnsitz-Anmeldung die Anschrift Ihrer Ausweisdokumente aktualisieren lassen.
+
+<h2>Frist/Dauer</h2>
+Sie müssen sich innerhalb von zwei Wochen anmelden.
+
+<h2>Sonstiges</h2>
+Ihr Wohnungsgeber ist verpflichtet, 
+Ihnen den Einzug in die neue Wohnung beziehungsweise den Auszug aus der alten Wohnung schriflich zu bestätigen.
+Legen Sie diese Bescheinigungen der Meldebehörde vor. 
+Die Bestätigung des Wohnungsgebers ist auch elektronisch möglich. 
+In diesem Fall erhalten Sie ein Zuordnungsmerkmal, über das die Bestätigung abgewickelt wird.
+Nach der Anmeldung erhalten Sie eine Meldebestätigung für Ihre Unterlagen.
+</text>
