@@ -9,6 +9,7 @@ object FrmContent: TFrmContent
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 3
   object Header1: THeader
     Sides = [Top, Left, Bottom, Right]
@@ -30,7 +31,7 @@ object FrmContent: TFrmContent
     TextSettings.FontColor = claWhite
     Text = 'StepIn Freiburg'
   end
-  object Memo1: TMemo
+  object MContent: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
     Position.Y = 72.000000000000000000

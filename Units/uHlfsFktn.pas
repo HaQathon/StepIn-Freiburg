@@ -8,10 +8,13 @@ uses
   windows,
   {$endif}
   System.SysUtils,
-  System.IOUtils;
+  System.IOUtils,
+  FMX.Dialogs,
+  uTask, uContent;
 
 function getHomePath(): string;
 function GetLanguageID: String;
+function LadeContentToTask(TaskId: Integer) : String;
 
 implementation
 
@@ -23,7 +26,7 @@ function getHomePath(): string;
      result := TPath.GetDocumentsPath;
      {$endif}
    end;
-
+{ ============================================================================ }
 function GetLanguageID: String;
 {$IFDEF IOS}
    var
@@ -57,5 +60,34 @@ function GetLanguageID: String;
          StrDispose(buffer);
 {$ENDIF}
     end;
+{ ============================================================================ }
+function LadeContentToTask(TaskId: Integer) : String;
+   var
+    TaskDatenbank    : TTaskDatenbank;
+    tmpTaskObj       : TTask;
+    ContentDatenbank : TContentDatenbank;
+    tmpContentObj    : TContent;
+   begin
+    tmpTaskObj    := TTask.Create;
+    tmpContentObj := TContent.Create;
+    try
+
+      tmpTaskObj    := TaskDatenbank.get(TaskId);
+      tmpContentObj := ContentDatenbank.get(tmpTaskObj.id);
+      if tmpContentObj.content = '' then
+          begin
+           ShowMessage('Zu diesem Task gibt es keinen Content');
+{x}        exit;
+          end
+       else
+          begin
+           Result        := tmpContentObj.content;
+          end;
+    finally
+    FreeAndNil(tmpTaskObj);
+    FreeAndNil(tmpContentObj);
+    end;
+
+   end;
 
 end.

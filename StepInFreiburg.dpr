@@ -13,7 +13,7 @@ uses
   uSystemStrings in 'Datenbanken\uSystemStrings.pas',
   uFrmWillkommen in 'uFrmWillkommen.pas' {formWillkommen},
   uSetDimensions in 'uSetDimensions.pas',
-  uTaskContentRel in 'Datenbanken\uTaskContentRel.pas',
+  uContent in 'Datenbanken\uContent.pas',
   uHlfsFktn in 'Units\uHlfsFktn.pas',
   uFrmFragen in 'uFrmFragen.pas' {fFragen},
   uFrmContent in 'uFrmContent.pas' {FrmContent};
