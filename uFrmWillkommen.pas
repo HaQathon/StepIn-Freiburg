@@ -39,6 +39,7 @@ procedure TformWillkommen.FormCreate(Sender: TObject);
    begin
     SaveState.StoragePath := GetHomePath;      //anpassen an hilfsfunktion
     r := TBinaryReader.Create(SaveState.Stream);
+    ErsterAufruf := true;
     try
       if SaveState.Stream.Size > 0 then
          begin
@@ -66,13 +67,13 @@ procedure TformWillkommen.imStartButtonClick(Sender: TObject);
    var
     Main : TForm2;
    begin
-    if ErsterAufruf = true then
+    if ErsterAufruf = false then
        begin
        //hier fragen anzeigen
        end
     else
        begin
-        Main := TForm2.Create();
+        Main := TForm2.Create(Self);
         Main.Show;
        end;
 
