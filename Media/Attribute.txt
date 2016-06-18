@@ -1,7 +1,7 @@
 ﻿	Regestrirung
 	Wohnung 	
 		- Wohnug anmelden erldegit
-		- Müll
+		- Müll                   erledigt
 		- Strom,Wasser,Telefon
 	KFZ
 		- Anmeldung		erledigt 
@@ -10,7 +10,7 @@
 	Flüchtlinge
 		- Anmeldung
 		- nice to know
-		- Sprachkurse 
+		- Sprachkurse   erledigt
 	Familie 
 		- Wohnung 
 		- Bildung 
