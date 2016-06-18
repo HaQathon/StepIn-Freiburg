@@ -12,7 +12,9 @@ uses
   uAttributeRel in 'Datenbanken\uAttributeRel.pas',
   uSystemStrings in 'Datenbanken\uSystemStrings.pas',
   uFrmWillkommen in 'uFrmWillkommen.pas' {formWillkommen},
-  uSetDimensions in 'uSetDimensions.pas';
+  uSetDimensions in 'uSetDimensions.pas',
+  uTaskContentRel in 'Datenbanken\uTaskContentRel.pas',
+  uHlfsFktn in 'Units\uHlfsFktn.pas';
 
 {$R *.res}
 

@@ -48,7 +48,6 @@ procedure TForm2.btn_OpenMultiviewClick(Sender: TObject);
 procedure TForm2.Button1Click(Sender: TObject);
  begin
   MultiView1.HideMaster;
-
  end;
 
 end.

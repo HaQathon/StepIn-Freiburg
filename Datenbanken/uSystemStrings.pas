@@ -11,13 +11,13 @@ type
   TSystemString = class(TEntityBase)
   private // Felder private, durch property veröffentlichen
     fId: Integer;
-    fKey: string;
+    fStringKey: string;
     fTextDE: string;
     fTextEN: string;
     fTextFR: string;
   public
     property id: integer read fID write fID;
-    property key: string read fKey write fKey;
+    property stringKey: string read fStringKey write fStringKey;
     property textDE: string read fTextDE write fTextDE;
     property textEN: string read fTextEN write fTextEN;
     property textFR: string read fTextFR write fTextFR;
@@ -35,16 +35,16 @@ type
     procedure updateBySystemStringId(str: TSystemString);
     function sucheEintraege(Suche: String): TObjectList<TSystemString>;
     function getAllAttribute: TList<TSystemString>;
-    procedure deleteBySystemStringKey(key: string);
-    function getLasTSystemString: TSystemString;
-    function get(const key: string): TSystemString;
+    procedure deleteBySystemStringKey(stringKey: string);
+    function getLastSystemString: TSystemString;
+    function get(const stringKey: string): TSystemString;
 
     function getTableName: String; override;
     procedure getColumnNames(columnList: TList<String>);override;
 
     const cTABLE_NAME = 'SystemStrings';
     const cID = 'id';
-    const cKEY = 'key';
+    const cSTRINGKEY = 'stringKey';
     const cTEXTDE = 'textDE';
     const cTEXTEN = 'textEN';
     const cTEXTFR = 'textFR';
@@ -76,7 +76,7 @@ constructor TSystemStringDatenbank.Create(const Database: string);
 
     FSQLConnection.ExecSQL('CREATE TABLE IF NOT EXISTS ' + cTABLE_NAME + ' ( ' +
        cID + ' INTEGER PRIMARY KEY AUTOINCREMENT, ' +
-       cKEY + ' TEXT NOT NULL, ' +
+       cSTRINGKEY + ' TEXT NOT NULL, ' +
        cTEXTDE+ ' TEXT NOT NULL, ' +
        cTEXTEN+ ' TEXT NOT NULL, ' +
        cTEXTFR+ ' TEXT NOT NULL' + ')');
@@ -87,7 +87,7 @@ constructor TSystemStringDatenbank.Create(const Database: string);
 procedure TSystemStringDatenbank.getColumnNames(columnList: TList<String>);
    begin
     columnList.Add(cID);
-    columnList.Add(cKEY);
+    columnList.Add(cSTRINGKEY);
     columnList.Add(cTEXTDE);
     columnList.Add(cTEXTEN);
     columnList.Add(cTEXTFR);
@@ -106,7 +106,7 @@ function TSystemStringDatenbank.getTableName: String;
 procedure TSystemString.fillFields(query: TUniQuery);
    begin
     id := query.FieldByName(SystemStringDatenbank.cID).AsInteger;
-    key := query.FieldByName(SystemStringDatenbank.cKEY).AsString;
+    stringKey := query.FieldByName(SystemStringDatenbank.cSTRINGKEY).AsString;
     textDE := query.FieldByName(SystemStringDatenbank.cTEXTDE).AsString;
     textEN := query.FieldByName(SystemStringDatenbank.cTEXTEN).AsString;
     textFR := query.FieldByName(SystemStringDatenbank.cTEXTFR).AsString;
@@ -118,7 +118,7 @@ procedure TSystemString.fillFields(query: TUniQuery);
 procedure TSystemString.fillParamsOfQuery(query: TUniQuery);
    begin
     query.ParamByName(SystemStringDatenbank.cID).asInteger := id;
-    query.ParamByName(SystemStringDatenbank.cKEY).asString := key;
+    query.ParamByName(SystemStringDatenbank.cSTRINGKEY).asString := StringKey;
     query.ParamByName(SystemStringDatenbank.cTEXTDE).asString := textDE;
     query.ParamByName(SystemStringDatenbank.cTEXTDE).asString := textEN;
     query.ParamByName(SystemStringDatenbank.cTEXTDE).asString := textFR;
@@ -183,11 +183,11 @@ function TSystemStringDatenbank.sucheEintraege(Suche: String): TObjectList<TSyst
 
 { ============================================================================ }
 
-function TSystemStringDatenbank.get(const key: string): TSystemString;
+function TSystemStringDatenbank.get(const stringKey: string): TSystemString;
    var
     List: TList<TSystemString>;
    begin
-    List := sucheEintraege(cKEY + '=' + key);
+    List := sucheEintraege(cSTRINGKEY + '=' + stringKey);
     try
       if List.Count = 1 then result := List.Extract(List.First)
       else result := nil;
@@ -220,9 +220,9 @@ procedure TSystemString.addToDatabase;
 
 { ============================================================================ }
 
-procedure TSystemStringDatenbank.DeleteBySystemStringKey(key: string);
+procedure TSystemStringDatenbank.DeleteBySystemStringKey(stringKey: string);
    begin
-    Delete(cKEY+'='+#39+key+#39);
+    Delete(cSTRINGKEY+'='+#39+stringKey+#39);
    end;
 
 { ============================================================================ }
@@ -258,7 +258,7 @@ function TSystemStringDatenbank.getLastSystemString: TSystemString;
 { ============================================================================ }
 
 initialization
-  SystemStringDatenbank := TSystemStringDatenbank.Create(TPath.Combine(extractFilePath(paramStr(0)), CONTENT_URI_SYSTEMSTRINGS));
+  SystemStringDatenbank := TSystemStringDatenbank.Create(TPath.Combine(getHomePath(), CONTENT_URI_SYSTEMSTRINGS));
 
 { ============================================================================ }
 

@@ -17,8 +17,7 @@ type
     property AttributName: string read fAttributname write fAttributName;
     property Verwendet: Boolean read fVerwendet write fVerwendet;
 
-    procedure fillFields(query: TUniQuery);
-    procedure addToDatabase;
+    procedure fillFields(query: TUniQuery);                                procedure addToDatabase;
     function Copy: TAttribut;
 
     procedure fillParamsOfQuery(query: TUniQuery); override;
@@ -253,7 +252,7 @@ function TAttribut.Copy: TAttribut;
 { ============================================================================ }
 
 initialization
-  AttributDatenbank := TAttributDatenbank.Create(TPath.Combine(extractFilePath(paramStr(0)), CONTENT_URI_ATTRIBUT));
+  AttributDatenbank := TAttributDatenbank.Create(TPath.Combine(getHomePath(), CONTENT_URI_ATTRIBUT));
 
 { ============================================================================ }
 
