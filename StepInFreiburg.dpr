@@ -14,12 +14,14 @@ uses
   uFrmWillkommen in 'uFrmWillkommen.pas' {formWillkommen},
   uSetDimensions in 'uSetDimensions.pas',
   uTaskContentRel in 'Datenbanken\uTaskContentRel.pas',
-  uHlfsFktn in 'Units\uHlfsFktn.pas';
+  uHlfsFktn in 'Units\uHlfsFktn.pas',
+  uFrmFragen in 'uFrmFragen.pas' {fFragen};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TformWillkommen, formWillkommen);
+  Application.CreateForm(TfFragen, fFragen);
   Application.Run;
 end.
