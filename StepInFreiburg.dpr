@@ -15,7 +15,8 @@ uses
   uSetDimensions in 'uSetDimensions.pas',
   uTaskContentRel in 'Datenbanken\uTaskContentRel.pas',
   uHlfsFktn in 'Units\uHlfsFktn.pas',
-  uFrmFragen in 'uFrmFragen.pas' {fFragen};
+  uFrmFragen in 'uFrmFragen.pas' {fFragen},
+  uFrmContent in 'uFrmContent.pas' {FrmContent};
 
 {$R *.res}
 
@@ -23,5 +24,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TformWillkommen, formWillkommen);
   Application.CreateForm(TfFragen, fFragen);
+  Application.CreateForm(TFrmContent, FrmContent);
   Application.Run;
 end.
