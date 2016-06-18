@@ -30,15 +30,4 @@ object fFragen: TfFragen
     TextSettings.FontColor = claWhite
     Text = 'StepIn Freiburg'
   end
-  object ListBox1: TListBox
-    Position.X = 88.000000000000000000
-    Position.Y = 208.000000000000000000
-    TabOrder = 4
-    DisableFocusEffect = True
-    DefaultItemStyles.ItemStyle = ''
-    DefaultItemStyles.GroupHeaderStyle = ''
-    DefaultItemStyles.GroupFooterStyle = ''
-    Viewport.Width = 200.000000000000000000
-    Viewport.Height = 200.000000000000000000
-  end
 end

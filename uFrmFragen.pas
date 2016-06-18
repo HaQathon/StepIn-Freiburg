@@ -11,7 +11,6 @@ type
   TfFragen = class(TForm)
     Header1: THeader;
     lbl_title: TLabel;
-    ListBox1: TListBox;
   private
     { Private-Deklarationen }
   public
@@ -19,7 +18,7 @@ type
   end;
 
 var
-  fFragen: TfFragen;
+  formFragen: TfFragen;
 
 implementation
 

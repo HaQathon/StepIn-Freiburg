@@ -3,7 +3,7 @@ program StepInFreiburg;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  Fmain in 'Fmain.pas' {Form2},
+  uFrmMain in 'uFrmMain.pas' {Form2},
   uTask in 'Datenbanken\uTask.pas',
   uSQLConnection in 'Units\uSQLConnection.pas',
   uTableBase in 'Units\uTableBase.pas',
@@ -22,6 +22,7 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TformWillkommen, formWillkommen);
-  Application.CreateForm(TfFragen, fFragen);
+  Application.CreateForm(TformMain, formMain);
+  Application.CreateForm(TfFragen, formFragen);
   Application.Run;
 end.

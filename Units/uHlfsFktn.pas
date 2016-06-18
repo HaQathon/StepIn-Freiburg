@@ -3,7 +3,7 @@ unit uHlfsFktn;
 interface
 
 uses
-
+   FMX.Platform,
   {$ifdef mswindows}
   windows,
   {$endif}

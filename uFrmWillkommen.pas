@@ -5,8 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,Fmain, FMX.Objects,
-  FMX.Layouts, uFrmFragen;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,uFrmMain, FMX.Objects,
+  FMX.Layouts, uFrmFragen, FMX.ListBox;
 
 type
   TformWillkommen = class(TForm)
@@ -16,9 +16,11 @@ type
     laBeantworteFragen: TLabel;
     imStartButton: TImage;
     layTitelBild: TLayout;
+    StyleBook1: TStyleBook;
     procedure FormCreate(Sender: TObject);
     procedure imStartButtonClick(Sender: TObject);
     procedure FormSaveState(Sender: TObject);
+    procedure layTitelBildClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -65,7 +67,7 @@ procedure TformWillkommen.FormSaveState(Sender: TObject);
 { ============================================================================ }
 procedure TformWillkommen.imStartButtonClick(Sender: TObject);
    var
-    Main : TForm2;
+    Main : TformMain;
     Fragen :  TfFragen;
    begin
     if ErsterAufruf = false then
@@ -75,11 +77,16 @@ procedure TformWillkommen.imStartButtonClick(Sender: TObject);
        end
     else
        begin
-        Main := TForm2.Create(Self);
+        Main := TformMain.Create(Self);
         Main.Show;
        end;
 
    end;
+procedure TformWillkommen.layTitelBildClick(Sender: TObject);
+begin
+
+end;
+
 { ============================================================================ }
 
 end.

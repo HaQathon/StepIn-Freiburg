@@ -1,0 +1,772 @@
+object TStyleContainer
+  object TLayout
+    StyleName = 'ListBoxstyle'
+    Align = Center
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 0
+    object TBrushObject
+      StyleName = 'AlternatingRowBackground'
+      Brush.Color = xFFEBEBEB
+    end
+    object TRectangle
+      StyleName = 'background'
+      Align = Contents
+      Fill.Color = xFFE91E63
+      HitTest = False
+      Size.Width = 200.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object TLayout
+        StyleName = 'content'
+        Align = Client
+        ClipChildren = True
+        Size.Width = 195.000000000000000000
+        Size.Height = 195.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object TScrollBar
+        StyleName = 'vscrollbar'
+        Align = Right
+        SmallChange = 0.000000000000000000
+        Orientation = Vertical
+        Position.X = 195.000000000000000000
+        Size.Width = 5.000000000000000000
+        Size.Height = 195.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'ListBoxstyleScrollBarStyle1'
+      end
+      object TScrollBar
+        StyleName = 'hscrollbar'
+        Align = Bottom
+        SmallChange = 0.000000000000000000
+        Orientation = Horizontal
+        Position.Y = 195.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 5.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object TLayout
+        Align = Client
+        Size.Width = 195.000000000000000000
+        Size.Height = 195.000000000000000000
+        Size.PlatformDefault = False
+        object TSmallScrollBar
+          StyleName = 'vsmallscrollbar'
+          Align = Right
+          SmallChange = 0.000000000000000000
+          Orientation = Vertical
+          Size.Width = 5.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'ListBoxstyleSmallScrollBarStyle1'
+          Visible = False
+        end
+        object TSmallScrollBar
+          StyleName = 'hsmallscrollbar'
+          Align = Bottom
+          SmallChange = 0.000000000000000000
+          Orientation = Horizontal
+          Size.Width = 150.000000000000000000
+          Size.Height = 5.000000000000000000
+          Size.PlatformDefault = False
+          Visible = False
+        end
+      end
+      object TLayout
+        StyleName = 'header'
+        Align = Top
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+      end
+      object TLayout
+        StyleName = 'footer'
+        Align = Bottom
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+      end
+    end
+  end
+  object TLayout
+    StyleName = 'ListBoxstyleScrollBarStyle1'
+    Align = Center
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 1
+    object TTrack
+      StyleName = 'htrack'
+      Align = Client
+      Locked = True
+      Orientation = Horizontal
+      Size.Width = 200.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'scrollbarhtrackstyle'
+    end
+    object TTrack
+      StyleName = 'vtrack'
+      Align = Client
+      Locked = True
+      Orientation = Horizontal
+      Size.Width = 200.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'scrollbarvtrackstyle'
+    end
+  end
+  object TStyleObject
+    StyleName = 'vscrollbarscrollbarhtrackstyle1'
+    SourceLookup = 'AndroidL Lightstyle.png'
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    SourceLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 46.000000000000000000
+        SourceRect.Top = 40.000000000000000000
+        SourceRect.Right = 58.000000000000000000
+        SourceRect.Bottom = 52.000000000000000000
+      end
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 82.000000000000000000
+        SourceRect.Top = 60.000000000000000000
+        SourceRect.Right = 100.000000000000000000
+        SourceRect.Bottom = 78.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Left = 85.000000000000000000
+        SourceRect.Top = 80.000000000000000000
+        SourceRect.Right = 109.000000000000000000
+        SourceRect.Bottom = 104.000000000000000000
+      end
+      item
+        CapInsets.Left = 6.000000000000000000
+        CapInsets.Top = 6.000000000000000000
+        CapInsets.Right = 6.000000000000000000
+        CapInsets.Bottom = 6.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 178.000000000000000000
+        SourceRect.Top = 113.000000000000000000
+        SourceRect.Right = 214.000000000000000000
+        SourceRect.Bottom = 149.000000000000000000
+      end>
+    object TThumb
+      StyleName = 'thumb'
+      Locked = True
+      Size.Width = 50.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'hthumbstyle'
+    end
+  end
+  object TButtonStyleObject
+    StyleName = 'htrackhthumbstyle1'
+    Align = Center
+    SourceLookup = 'AndroidL Lightstyle.png'
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    HotLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 3.000000000000000000
+        SourceRect.Top = 47.000000000000000000
+        SourceRect.Right = 38.000000000000000000
+        SourceRect.Bottom = 52.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 1.000000000000000000
+        SourceRect.Top = 68.000000000000000000
+        SourceRect.Right = 53.000000000000000000
+        SourceRect.Bottom = 75.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Top = 90.000000000000000000
+        SourceRect.Right = 70.000000000000000000
+        SourceRect.Bottom = 100.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 2.000000000000000000
+        SourceRect.Top = 145.000000000000000000
+        SourceRect.Right = 107.000000000000000000
+        SourceRect.Bottom = 160.000000000000000000
+      end>
+    FocusedLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 3.000000000000000000
+        SourceRect.Top = 47.000000000000000000
+        SourceRect.Right = 38.000000000000000000
+        SourceRect.Bottom = 52.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 1.000000000000000000
+        SourceRect.Top = 68.000000000000000000
+        SourceRect.Right = 53.000000000000000000
+        SourceRect.Bottom = 75.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Top = 90.000000000000000000
+        SourceRect.Right = 70.000000000000000000
+        SourceRect.Bottom = 100.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 2.000000000000000000
+        SourceRect.Top = 145.000000000000000000
+        SourceRect.Right = 107.000000000000000000
+        SourceRect.Bottom = 160.000000000000000000
+      end>
+    NormalLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 3.000000000000000000
+        SourceRect.Top = 47.000000000000000000
+        SourceRect.Right = 38.000000000000000000
+        SourceRect.Bottom = 52.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 1.000000000000000000
+        SourceRect.Top = 68.000000000000000000
+        SourceRect.Right = 53.000000000000000000
+        SourceRect.Bottom = 75.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Top = 90.000000000000000000
+        SourceRect.Right = 70.000000000000000000
+        SourceRect.Bottom = 100.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 2.000000000000000000
+        SourceRect.Top = 145.000000000000000000
+        SourceRect.Right = 107.000000000000000000
+        SourceRect.Bottom = 160.000000000000000000
+      end>
+    PressedLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 3.000000000000000000
+        SourceRect.Top = 47.000000000000000000
+        SourceRect.Right = 38.000000000000000000
+        SourceRect.Bottom = 52.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 1.000000000000000000
+        SourceRect.Top = 68.000000000000000000
+        SourceRect.Right = 53.000000000000000000
+        SourceRect.Bottom = 75.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Top = 90.000000000000000000
+        SourceRect.Right = 70.000000000000000000
+        SourceRect.Bottom = 100.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 2.000000000000000000
+        SourceRect.Top = 145.000000000000000000
+        SourceRect.Right = 107.000000000000000000
+        SourceRect.Bottom = 160.000000000000000000
+      end>
+    TouchAnimation.Link = <>
+  end
+  object TStyleObject
+    StyleName = 'vscrollbarscrollbarvtrackstyle1'
+    SourceLookup = 'AndroidL Lightstyle.png'
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    SourceLink = <
+      item
+        CapInsets.Left = 1.000000000000000000
+        CapInsets.Top = 1.000000000000000000
+        CapInsets.Right = 1.000000000000000000
+        CapInsets.Bottom = 1.000000000000000000
+        SourceRect.Left = 46.000000000000000000
+        SourceRect.Top = 40.000000000000000000
+        SourceRect.Right = 58.000000000000000000
+        SourceRect.Bottom = 52.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 82.000000000000000000
+        SourceRect.Top = 60.000000000000000000
+        SourceRect.Right = 100.000000000000000000
+        SourceRect.Bottom = 78.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Left = 86.000000000000000000
+        SourceRect.Top = 83.000000000000000000
+        SourceRect.Right = 110.000000000000000000
+        SourceRect.Bottom = 107.000000000000000000
+      end
+      item
+        CapInsets.Left = 6.000000000000000000
+        CapInsets.Top = 6.000000000000000000
+        CapInsets.Right = 6.000000000000000000
+        CapInsets.Bottom = 6.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 178.000000000000000000
+        SourceRect.Top = 114.000000000000000000
+        SourceRect.Right = 214.000000000000000000
+        SourceRect.Bottom = 150.000000000000000000
+      end>
+    object TThumb
+      StyleName = 'thumb'
+      Locked = True
+      Size.Width = 16.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'vthumbstyle'
+    end
+  end
+  object TButtonStyleObject
+    StyleName = 'vtrackvthumbstyle1'
+    SourceLookup = 'AndroidL Lightstyle.png'
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    HotLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 88.000000000000000000
+        SourceRect.Top = 4.000000000000000000
+        SourceRect.Right = 93.000000000000000000
+        SourceRect.Bottom = 39.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 145.000000000000000000
+        SourceRect.Top = 3.000000000000000000
+        SourceRect.Right = 152.000000000000000000
+        SourceRect.Bottom = 55.000000000000000000
+      end
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Left = 176.000000000000000000
+        SourceRect.Top = 4.000000000000000000
+        SourceRect.Right = 186.000000000000000000
+        SourceRect.Bottom = 74.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 303.000000000000000000
+        SourceRect.Top = 5.000000000000000000
+        SourceRect.Right = 318.000000000000000000
+        SourceRect.Bottom = 110.000000000000000000
+      end>
+    FocusedLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 88.000000000000000000
+        SourceRect.Top = 4.000000000000000000
+        SourceRect.Right = 93.000000000000000000
+        SourceRect.Bottom = 39.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 145.000000000000000000
+        SourceRect.Top = 3.000000000000000000
+        SourceRect.Right = 152.000000000000000000
+        SourceRect.Bottom = 55.000000000000000000
+      end
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Left = 176.000000000000000000
+        SourceRect.Top = 4.000000000000000000
+        SourceRect.Right = 186.000000000000000000
+        SourceRect.Bottom = 74.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 303.000000000000000000
+        SourceRect.Top = 5.000000000000000000
+        SourceRect.Right = 318.000000000000000000
+        SourceRect.Bottom = 110.000000000000000000
+      end>
+    NormalLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 88.000000000000000000
+        SourceRect.Top = 4.000000000000000000
+        SourceRect.Right = 93.000000000000000000
+        SourceRect.Bottom = 39.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 145.000000000000000000
+        SourceRect.Top = 3.000000000000000000
+        SourceRect.Right = 152.000000000000000000
+        SourceRect.Bottom = 55.000000000000000000
+      end
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Left = 176.000000000000000000
+        SourceRect.Top = 4.000000000000000000
+        SourceRect.Right = 186.000000000000000000
+        SourceRect.Bottom = 74.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 303.000000000000000000
+        SourceRect.Top = 5.000000000000000000
+        SourceRect.Right = 318.000000000000000000
+        SourceRect.Bottom = 110.000000000000000000
+      end>
+    PressedLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 88.000000000000000000
+        SourceRect.Top = 4.000000000000000000
+        SourceRect.Right = 93.000000000000000000
+        SourceRect.Bottom = 39.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 145.000000000000000000
+        SourceRect.Top = 3.000000000000000000
+        SourceRect.Right = 152.000000000000000000
+        SourceRect.Bottom = 55.000000000000000000
+      end
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Left = 176.000000000000000000
+        SourceRect.Top = 4.000000000000000000
+        SourceRect.Right = 186.000000000000000000
+        SourceRect.Bottom = 74.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 303.000000000000000000
+        SourceRect.Top = 5.000000000000000000
+        SourceRect.Right = 318.000000000000000000
+        SourceRect.Bottom = 110.000000000000000000
+      end>
+    TouchAnimation.Link = <>
+  end
+  object TLayout
+    StyleName = 'ListBoxstyleSmallScrollBarStyle1'
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 6
+    object TTrack
+      StyleName = 'htrack'
+      Align = Client
+      Locked = True
+      Orientation = Horizontal
+      Size.Width = 200.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'scrollbarhtrackstyle'
+    end
+    object TTrack
+      StyleName = 'vtrack'
+      Align = Client
+      Locked = True
+      Orientation = Horizontal
+      Size.Width = 200.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'scrollbarvtrackstyle'
+    end
+  end
+  object TStyleObject
+    StyleName = 'vsmallscrollbarscrollbarhtrackstyle1'
+    SourceLookup = 'AndroidL Lightstyle.png'
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    SourceLink = <
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        SourceRect.Left = 46.000000000000000000
+        SourceRect.Top = 40.000000000000000000
+        SourceRect.Right = 58.000000000000000000
+        SourceRect.Bottom = 52.000000000000000000
+      end
+      item
+        CapInsets.Left = 2.000000000000000000
+        CapInsets.Top = 2.000000000000000000
+        CapInsets.Right = 2.000000000000000000
+        CapInsets.Bottom = 2.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 82.000000000000000000
+        SourceRect.Top = 60.000000000000000000
+        SourceRect.Right = 100.000000000000000000
+        SourceRect.Bottom = 78.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Left = 85.000000000000000000
+        SourceRect.Top = 80.000000000000000000
+        SourceRect.Right = 109.000000000000000000
+        SourceRect.Bottom = 104.000000000000000000
+      end
+      item
+        CapInsets.Left = 6.000000000000000000
+        CapInsets.Top = 6.000000000000000000
+        CapInsets.Right = 6.000000000000000000
+        CapInsets.Bottom = 6.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 178.000000000000000000
+        SourceRect.Top = 113.000000000000000000
+        SourceRect.Right = 214.000000000000000000
+        SourceRect.Bottom = 149.000000000000000000
+      end>
+    object TThumb
+      StyleName = 'thumb'
+      Locked = True
+      Size.Width = 50.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'hthumbstyle'
+    end
+  end
+  object TStyleObject
+    StyleName = 'vsmallscrollbarscrollbarvtrackstyle1'
+    SourceLookup = 'AndroidL Lightstyle.png'
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    SourceLink = <
+      item
+        CapInsets.Left = 1.000000000000000000
+        CapInsets.Top = 1.000000000000000000
+        CapInsets.Right = 1.000000000000000000
+        CapInsets.Bottom = 1.000000000000000000
+        SourceRect.Left = 46.000000000000000000
+        SourceRect.Top = 40.000000000000000000
+        SourceRect.Right = 58.000000000000000000
+        SourceRect.Bottom = 52.000000000000000000
+      end
+      item
+        CapInsets.Left = 3.000000000000000000
+        CapInsets.Top = 3.000000000000000000
+        CapInsets.Right = 3.000000000000000000
+        CapInsets.Bottom = 3.000000000000000000
+        Scale = 1.500000000000000000
+        SourceRect.Left = 82.000000000000000000
+        SourceRect.Top = 60.000000000000000000
+        SourceRect.Right = 100.000000000000000000
+        SourceRect.Bottom = 78.000000000000000000
+      end
+      item
+        CapInsets.Left = 4.000000000000000000
+        CapInsets.Top = 4.000000000000000000
+        CapInsets.Right = 4.000000000000000000
+        CapInsets.Bottom = 4.000000000000000000
+        Scale = 2.000000000000000000
+        SourceRect.Left = 86.000000000000000000
+        SourceRect.Top = 83.000000000000000000
+        SourceRect.Right = 110.000000000000000000
+        SourceRect.Bottom = 107.000000000000000000
+      end
+      item
+        CapInsets.Left = 6.000000000000000000
+        CapInsets.Top = 6.000000000000000000
+        CapInsets.Right = 6.000000000000000000
+        CapInsets.Bottom = 6.000000000000000000
+        Scale = 3.000000000000000000
+        SourceRect.Left = 178.000000000000000000
+        SourceRect.Top = 114.000000000000000000
+        SourceRect.Right = 214.000000000000000000
+        SourceRect.Bottom = 150.000000000000000000
+      end>
+    object TThumb
+      StyleName = 'thumb'
+      Locked = True
+      Size.Width = 16.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'vthumbstyle'
+    end
+  end
+  object panelIndigo: TRectangle
+    StyleName = 'panelIndigo'
+    Align = Center
+    Fill.Color = xFF3F51B5
+    HitTest = False
+    Size.Width = 288.000000000000000000
+    Size.Height = 120.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    Visible = False
+  end
+end
