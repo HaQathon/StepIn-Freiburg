@@ -1,27 +1,24 @@
-inherited FWillkomen_LgXhdpiPh: TFWillkomen_LgXhdpiPh
-  ClientHeight = 695
-  ClientWidth = 450
+inherited FWillkomen_Surface: TFWillkomen_Surface
+  ClientHeight = 1920
+  ClientWidth = 1080
   DesignerMasterStyle = 3
+<<<<<<< HEAD
+  inherited Label1: TLabel
+    Position.Y = 1372.793334960937000000
+=======
   inherited lblStepIn: TLabel
-    Position.X = 16.000000000000000000
-    Position.Y = 512.000000000000000000
-    Size.Width = 329.000000000000000000
-    Size.Height = 73.000000000000000000
+    Position.Y = 1372.793334960938000000
+>>>>>>> origin/master
   end
   inherited Image1: TImage
     MultiResBitmap.Height = 610
     MultiResBitmap.Width = 1024
   end
   inherited lblWilkommen: TLabel
-    Position.X = 16.000000000000000000
-    Position.Y = 456.000000000000000000
+    Position.Y = 1232.585937500000000000
   end
   inherited lblFragen: TLabel
-    Position.X = 16.000000000000000000
-    Position.Y = 568.000000000000000000
-    Size.Width = 337.000000000000000000
-    Size.Height = 97.000000000000000000
-    Text = 'Just answer some questions to get started'
+    Position.Y = 1506.523193359375000000
   end
   inherited btnStart: TImage
     MultiResBitmap.Height = 350
@@ -739,10 +736,7 @@ inherited FWillkomen_LgXhdpiPh: TFWillkomen_LgXhdpiPh
 >>>>>>> origin/master
         FileName = 'C:\Users\winne\Desktop\pinkbutton.png'
       end>
-    Position.X = 360.000000000000000000
-    Position.Y = 608.000000000000000000
-    Size.Width = 66.000000000000000000
-    Size.Height = 66.000000000000000000
-    Size.PlatformDefault = False
+    Position.X = 973.000000000000000000
+    Position.Y = 1835.000000000000000000
   end
 end

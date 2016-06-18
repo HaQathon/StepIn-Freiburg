@@ -1,19 +1,21 @@
-unit Willkomen;
+unit uFrmWillkommen;
 
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,Fmain, FMX.Objects;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,Fmain, FMX.Objects,
+  FMX.Layouts;
 
 type
   TformWillkommen = class(TForm)
-    Label1: TLabel;
-    Image1: TImage;
-    Label2: TLabel;
-    Label4: TLabel;
-    Image2: TImage;
+    laStepIn: TLabel;
+    imTitelBild: TImage;
+    laWillkommen: TLabel;
+    laBeantworteFragen: TLabel;
+    imStartButton: TImage;
+    layTitelBild: TLayout;
     procedure Button1Click(Sender: TObject);
   private
     { Private-Deklarationen }
