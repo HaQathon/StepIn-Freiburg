@@ -12,11 +12,7 @@ uses
 
 function getHomePath(): string;
 function GetLanguageID: String;
-=======
-  System.IOUtils;
-
-function getHomePath(): string;
->>>>>>> origin/master
+//=======
 
 implementation
 
@@ -29,7 +25,6 @@ function getHomePath(): string;
      {$endif}
    end;
 
-<<<<<<< HEAD
 function GetLanguageID: String;
 {$IFDEF IOS}
    var
@@ -63,7 +58,4 @@ function GetLanguageID: String;
          StrDispose(buffer);
 {$ENDIF}
     end;
-
-=======
->>>>>>> origin/master
 end.
