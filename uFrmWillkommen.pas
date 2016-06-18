@@ -18,6 +18,7 @@ type
     layTitelBild: TLayout;
     procedure FormCreate(Sender: TObject);
     procedure imStartButtonClick(Sender: TObject);
+    procedure FormSaveState(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -33,11 +34,34 @@ implementation
 {$R *.fmx}
 
 procedure TformWillkommen.FormCreate(Sender: TObject);
+   var
+    r : TBinaryReader;
    begin
-    ErsterAufruf := false; // diese var setzten durch abfrage des SaveState
-
+    SaveState.StoragePath := GetHomePath;      //anpassen an hilfsfunktion
+    r := TBinaryReader.Create(SaveState.Stream);
+    try
+      if SaveState.Stream.Size > 0 then
+         begin
+          ErsterAufruf := r.ReadBoolean;
+         end;
+    finally
+      r.Free;
+    end;
    end;
-
+{ ============================================================================ }
+procedure TformWillkommen.FormSaveState(Sender: TObject);
+   var
+    W : TBinaryWriter;
+   begin
+    SaveState.Stream.Clear;
+    W := TBinaryWriter.Create(SaveState.Stream);
+    try
+      W.Write(boolean(ErsterAufruf));
+    finally
+      W.Free;
+    end;
+   end;
+{ ============================================================================ }
 procedure TformWillkommen.imStartButtonClick(Sender: TObject);
    var
     Main : TForm2;
@@ -53,6 +77,7 @@ procedure TformWillkommen.imStartButtonClick(Sender: TObject);
        end;
 
    end;
+{ ============================================================================ }
 
 end.
 
