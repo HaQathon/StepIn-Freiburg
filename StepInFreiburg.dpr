@@ -23,7 +23,7 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TformWillkommen, formWillkommen);
-  Application.CreateForm(TfFragen, fFragen);
-  Application.CreateForm(TFrmContent, FrmContent);
+//  Application.CreateForm(TfFragen, fFragen);
+//  Application.CreateForm(TFrmContent, FrmContent);
   Application.Run;
 end.

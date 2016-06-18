@@ -43,7 +43,7 @@ type
     const cTABLE_NAME = 'Tasks';
     const cID = 'id';
     const cTASK_NAME = 'taskName';
-  	const cTASK_INFO = 'taskInfo';
+    const cTASK_INFO = 'taskInfo';
     const cERLEDIGT = 'erledigt';
   end;
 

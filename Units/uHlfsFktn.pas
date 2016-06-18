@@ -63,9 +63,7 @@ function GetLanguageID: String;
 { ============================================================================ }
 function LadeContentToTask(TaskId: Integer) : String;
    var
-    TaskDatenbank    : TTaskDatenbank;
     tmpTaskObj       : TTask;
-    ContentDatenbank : TContentDatenbank;
     tmpContentObj    : TContent;
    begin
     tmpTaskObj    := TTask.Create;

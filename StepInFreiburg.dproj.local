@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.197,C:\Users\winne\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.fmx=D:\Dokumente\Git\StepIn-Freiburg\Fmain.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.637,C:\Users\winne\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Project2.dproj=D:\Dokumente\Git\StepIn-Freiburg\StepInFreiburg.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.197,C:\Users\winne\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.pas=D:\Dokumente\Git\StepIn-Freiburg\Fmain.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.197,D:\Dokumente\Git\StepIn-Freiburg\Fmain.pas=C:\Users\winne\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.033,C:\Users\Tobias\Documents\GitHub\StepIn-Freiburg\Datenbanken\uTaskContentRel.pas=C:\Users\Tobias\Documents\GitHub\StepIn-Freiburg\Datenbanken\uTContent.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.867,C:\Users\Tobias\Documents\GitHub\StepIn-Freiburg\Datenbanken\uTContent.pas=C:\Users\Tobias\Documents\GitHub\StepIn-Freiburg\Datenbanken\uContent.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.637,D:\Dokumente\Git\StepIn-Freiburg\StepInFreiburg.dproj=C:\Users\winne\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Project2.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.917,=C:\Users\winne\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.pas</Transaction>
-    <Transaction>2016.06.18 17:16:05.033,C:\Users\Tobias\Documents\GitHub\StepIn-Freiburg\Datenbanken\uTContent.pas=C:\Users\Tobias\Documents\GitHub\StepIn-Freiburg\Datenbanken\uTaskContentRel.pas</Transaction>
-    <Transaction>2016.06.18 17:16:09.867,C:\Users\Tobias\Documents\GitHub\StepIn-Freiburg\Datenbanken\uContent.pas=C:\Users\Tobias\Documents\GitHub\StepIn-Freiburg\Datenbanken\uTContent.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.197,D:\Dokumente\Git\StepIn-Freiburg\Fmain.fmx=C:\Users\winne\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.fmx</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile iOSSimulator="iPhone5" Android="099aef4f"/>
-	</ActiveMobileDevice>  <ProjectSortOrder AutoSort="0" SortType="0">
+	</ActiveMobileDevice>
+	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="android-support-v4.dex.jar"/>
     <File Path="cloud-messaging.dex.jar"/>
     <File Path="fmx.dex.jar"/>
