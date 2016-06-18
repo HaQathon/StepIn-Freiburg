@@ -16,14 +16,16 @@ uses
   uContent in 'Datenbanken\uContent.pas',
   uHlfsFktn in 'Units\uHlfsFktn.pas',
   uFrmFragen in 'uFrmFragen.pas' {fFragen},
-  uFrmContent in 'uFrmContent.pas' {FrmContent};
+  uFrmContent in 'uFrmContent.pas' {FrmContent},
+  uFragen in 'Datenbanken\uFragen.pas',
+  uUnterFragen in 'Datenbanken\uUnterFragen.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TformWillkommen, formWillkommen);
-//  Application.CreateForm(TfFragen, fFragen);
+  //  Application.CreateForm(TfFragen, fFragen);
 //  Application.CreateForm(TFrmContent, FrmContent);
   Application.Run;
 end.
