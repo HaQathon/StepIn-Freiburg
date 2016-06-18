@@ -1,0 +1,26 @@
+﻿	Regestrirung
+	Wohnung 	
+		- Wohnug anmelden erldegit
+		- Müll
+		- Strom,Wasser,Telefon
+	KFZ
+		- Anmeldung		erledigt 
+	Haustiere
+		- Hundanmelden 	
+	Flüchtlinge
+		- Anmeldung
+		- nice to know
+		- Sprachkurse 
+	Familie 
+		- Wohnung 
+		- Bildung 
+			-Schule
+			-Kindergarten 
+		- KFZ
+		- Haustiere
+	
+	
+	
+	Sport und Freizeit (nice to have)
+	
+	

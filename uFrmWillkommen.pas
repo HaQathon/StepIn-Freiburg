@@ -33,9 +33,11 @@ implementation
 procedure TformWillkommen.Button1Click(Sender: TObject);
    var
     Main : TForm2;
+    sprache :TSysLocale;
    begin
     Main := TForm2.Create(Self);
     Main.Show;
+    sprache.PriLangID :=
    end;
 
 end.
