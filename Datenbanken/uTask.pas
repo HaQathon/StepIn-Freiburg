@@ -266,7 +266,7 @@ function TTask.Copy: TTask;
 { ============================================================================ }
 
 initialization
-  TaskDatenbank := TTaskDatenbank.Create(TPath.Combine(extractFilePath(paramStr(0)), CONTENT_URI_TASK));
+  TaskDatenbank := TTaskDatenbank.Create(TPath.Combine(getHomePath(), CONTENT_URI_TASK));
 
 { ============================================================================ }
 

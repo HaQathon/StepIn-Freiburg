@@ -11,13 +11,13 @@ type
   TString = class(TEntityBase)
   private // Felder private, durch property veröffentlichen
     fId: Integer;
-    fKey: string;
+    fStringKey: string;
     fTextDE: string;
     fTextEN: string;
     fTextFR: string;
   public
     property id: integer read fID write fID;
-    property key: string read fKey write fKey;
+    property StringKey: string read fStringKey write fStringKey;
     property textDE: string read fTextDE write fTextDE;
     property textEN: string read fTextEN write fTextEN;
     property textFR: string read fTextFR write fTextFR;
@@ -35,16 +35,16 @@ type
     procedure updateByStringId(str: TString);
     function sucheEintraege(Suche: String): TObjectList<TString>;
     function getAllAttribute: TList<TString>;
-    procedure deleteByStringKey(key: string);
+    procedure deleteByStringKey(stringKey: string);
     function getLastString: TString;
-    function get(const key: string): TString;
+    function get(const stringKey: string): TString;
 
     function getTableName: String; override;
     procedure getColumnNames(columnList: TList<String>);override;
 
     const cTABLE_NAME = 'Strings';
     const cID = 'id';
-    const cKEY = 'key';
+    const cSTRINGKEY = 'stringkey';
     const cTEXTDE = 'textDE';
     const cTEXTEN = 'textEN';
     const cTEXTFR = 'textFR';
@@ -76,7 +76,7 @@ constructor TStringDatenbank.Create(const Database: string);
 
     FSQLConnection.ExecSQL('CREATE TABLE IF NOT EXISTS ' + cTABLE_NAME + ' ( ' +
        cID + ' INTEGER PRIMARY KEY AUTOINCREMENT, ' +
-       cKEY + ' TEXT NOT NULL, ' +
+       cSTRINGKEY + ' TEXT NOT NULL, ' +
        cTEXTDE+ ' TEXT NOT NULL, ' +
        cTEXTEN+ ' TEXT NOT NULL, ' +
        cTEXTFR+ ' TEXT NOT NULL' + ')');
@@ -87,7 +87,7 @@ constructor TStringDatenbank.Create(const Database: string);
 procedure TStringDatenbank.getColumnNames(columnList: TList<String>);
    begin
     columnList.Add(cID);
-    columnList.Add(cKEY);
+    columnList.Add(cSTRINGKEY);
     columnList.Add(cTEXTDE);
     columnList.Add(cTEXTEN);
     columnList.Add(cTEXTFR);
@@ -106,7 +106,7 @@ function TStringDatenbank.getTableName: String;
 procedure TString.fillFields(query: TUniQuery);
    begin
     id := query.FieldByName(StringDatenbank.cID).AsInteger;
-    key := query.FieldByName(StringDatenbank.cKEY).AsString;
+    stringKey := query.FieldByName(StringDatenbank.cSTRINGKEY).AsString;
     textDE := query.FieldByName(StringDatenbank.cTEXTDE).AsString;
     textEN := query.FieldByName(StringDatenbank.cTEXTEN).AsString;
     textFR := query.FieldByName(StringDatenbank.cTEXTFR).AsString;
@@ -118,7 +118,7 @@ procedure TString.fillFields(query: TUniQuery);
 procedure TString.fillParamsOfQuery(query: TUniQuery);
    begin
     query.ParamByName(StringDatenbank.cID).asInteger := id;
-    query.ParamByName(StringDatenbank.cKEY).asString := key;
+    query.ParamByName(StringDatenbank.cSTRINGKEY).asString := stringKey;
     query.ParamByName(StringDatenbank.cTEXTDE).asString := textDE;
     query.ParamByName(StringDatenbank.cTEXTDE).asString := textEN;
     query.ParamByName(StringDatenbank.cTEXTDE).asString := textFR;
@@ -183,11 +183,11 @@ function TStringDatenbank.sucheEintraege(Suche: String): TObjectList<TString>;
 
 { ============================================================================ }
 
-function TStringDatenbank.get(const key: string): TString;
+function TStringDatenbank.get(const stringKey: string): TString;
    var
     List: TList<TString>;
    begin
-    List := sucheEintraege(cKEY + '=' + key);
+    List := sucheEintraege(cSTRINGKEY + '=' + stringKey);
     try
       if List.Count = 1 then result := List.Extract(List.First)
       else result := nil;
@@ -220,9 +220,9 @@ procedure TString.addToDatabase;
 
 { ============================================================================ }
 
-procedure TStringDatenbank.DeleteByStringKey(key: string);
+procedure TStringDatenbank.DeleteByStringKey(stringKey: string);
    begin
-    Delete(cKEY+'='+#39+key+#39);
+    Delete(cSTRINGKEY+'='+#39+stringKey+#39);
    end;
 
 { ============================================================================ }
@@ -258,7 +258,7 @@ function TStringDatenbank.getLastString: TString;
 { ============================================================================ }
 
 initialization
-  StringDatenbank := TStringDatenbank.Create(TPath.Combine(extractFilePath(paramStr(0)), CONTENT_URI_STRINGS));
+  StringDatenbank := TStringDatenbank.Create(TPath.Combine(getHomePath(), CONTENT_URI_STRINGS));
 
 { ============================================================================ }
 

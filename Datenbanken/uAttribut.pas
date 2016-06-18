@@ -253,7 +253,7 @@ function TAttribut.Copy: TAttribut;
 { ============================================================================ }
 
 initialization
-  AttributDatenbank := TAttributDatenbank.Create(TPath.Combine(extractFilePath(paramStr(0)), CONTENT_URI_ATTRIBUT));
+  AttributDatenbank := TAttributDatenbank.Create(TPath.Combine(getHomePath(), CONTENT_URI_ATTRIBUT));
 
 { ============================================================================ }
 
