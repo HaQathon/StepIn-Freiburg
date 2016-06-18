@@ -24,14 +24,20 @@ type
     paHeader: TPanel;
     layTaskHinzufuegen: TLayout;
     Layout1: TLayout;
-    ListBoxItem1: TListBoxItem;
-    ListBoxItem2: TListBoxItem;
-    ListBoxItem3: TListBoxItem;
-    ListBoxItem4: TListBoxItem;
+    lbiKFZ: TListBoxItem;
+    lbiWohnung: TListBoxItem;
+    lbiKinder: TListBoxItem;
+    lbiHaustiere: TListBoxItem;
     ListBox2: TListBox;
+    lbiAusweise: TListBoxItem;
     procedure btn_OpenMultiviewClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
+    procedure lbiKFZClick(Sender: TObject);
+    procedure lbiWohnungClick(Sender: TObject);
+    procedure lbiKinderClick(Sender: TObject);
+    procedure lbiHaustiereClick(Sender: TObject);
+    procedure lbiAusweiseClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -64,5 +70,46 @@ procedure TformMain.Image1Click(Sender: TObject);
   begin
    formAufgabeHinzufuegen.Show;
   end;
+
+procedure TformMain.lbiAusweiseClick(Sender: TObject);
+   begin
+    MultiView1.HideMaster;
+    lbiAusweise.IsSelected := false;
+    laAufgaben.Text := 'Ausweis';
+
+   //show all ausweis aufgaben
+   end;
+
+procedure TformMain.lbiHaustiereClick(Sender: TObject);
+begin
+   MultiView1.HideMaster;
+   lbiHaustiere.IsSelected := false;
+   laAufgaben.Text := 'Haustiere';
+   //show all haustiere aufgaben
+end;
+
+procedure TformMain.lbiKFZClick(Sender: TObject);
+  begin
+   MultiView1.HideMaster;
+   lbiKFZ.IsSelected := false;
+   laAufgaben.Text := 'KFZ';
+   //show all kfz aufgaben
+  end;
+
+procedure TformMain.lbiKinderClick(Sender: TObject);
+begin
+   MultiView1.HideMaster;
+   lbiKinder.IsSelected := false;
+   laAufgaben.Text := 'Kinder';
+   //show all kinder aufgaben
+end;
+
+procedure TformMain.lbiWohnungClick(Sender: TObject);
+begin
+   MultiView1.HideMaster;
+   lbiWohnung.IsSelected := false;
+   laAufgaben.Text := 'Wohnung';
+   //show all wohnung aufgaben
+end;
 
 end.
