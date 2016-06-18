@@ -16,7 +16,8 @@ type
     laBeantworteFragen: TLabel;
     imStartButton: TImage;
     layTitelBild: TLayout;
-    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure imStartButtonClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -25,19 +26,33 @@ type
 
 var
   formWillkommen: TformWillkommen;
+  ErsterAufruf  : boolean;
 
 implementation
 
 {$R *.fmx}
 
-procedure TformWillkommen.Button1Click(Sender: TObject);
+procedure TformWillkommen.FormCreate(Sender: TObject);
+   begin
+    ErsterAufruf := false; // diese var setzten durch abfrage des SaveState
+
+   end;
+
+procedure TformWillkommen.imStartButtonClick(Sender: TObject);
    var
     Main : TForm2;
-    sprache :TSysLocale;
    begin
-    Main := TForm2.Create(Self);
-    Main.Show;
-    sprache.PriLangID :=
+    if ErsterAufruf = true then
+       begin
+       //hier fragen anzeigen
+       end
+    else
+       begin
+        Main := TForm2.Create();
+        Main.Show;
+       end;
+
    end;
 
 end.
+
