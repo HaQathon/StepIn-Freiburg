@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView, FMX.MultiView, FMX.Edit,
-  FMX.Objects, FMX.Header, uTask, FMX.ListBox, FMX.Layouts,System.Generics.Collections ;
+  FMX.Objects, FMX.Header, uTask, FMX.ListBox, FMX.Layouts,uHlfsFktn,uFragen,System.Generics.Collections;
 
 type
   TformMain = class(TForm)
@@ -55,19 +55,19 @@ procedure TformMain.Button1Click(Sender: TObject);
 
 procedure TformMain.FormCreate(Sender: TObject);
 var
-  task:uTask.TTaskDatenbank;
-  list:TList<TTask>;
-  i:Integer;
-  item: TListViewItem;
-  begin
-  task:= uTask.TTaskDatenbank.Create(uTask.TTaskDatenbank.cTABLE_NAME);
-  list:=task.getAllTasks;
-    for i := 0 to list.Count-1 do  begin
-      item:=ListView1.Items.Add;
-      item.Text:=list.Items[i].taskName;
-    end;
+ list: TList<TFragen>;
+ i:Integer;
+begin
+    uHlfsFktn.addTestData;
 
-  end;
 
+   list:=FragenDatenbank.getAllFragen;
+   ShowMessage(IntToStr(list.Count));
+   for i := 0 to list.Count-1 do  begin
+     ShowMessage(list.Items[i].Frage);
+   end;
+
+
+end;
 
 end.

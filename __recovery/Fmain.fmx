@@ -357,7 +357,6 @@ object formMain: TformMain
     StyleLookup = 'drawertoolbutton'
     TabOrder = 5
     Text = 'btn_OpenMultiView'
-    OnClick = btn_OpenMultiViewClick
   end
   object MultiView1: TMultiView
     MasterButton = btn_OpenMultiView
