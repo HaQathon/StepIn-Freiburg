@@ -28,7 +28,6 @@ type
     ListBoxItem4: TListBoxItem;
     procedure btn_OpenMultiviewClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -52,10 +51,5 @@ procedure TformMain.Button1Click(Sender: TObject);
  begin
   MultiView1.HideMaster;
  end;
-
-procedure TformMain.FormCreate(Sender: TObject);
-  begin
-   ListView2.ad
-  end;
 
 end.

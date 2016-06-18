@@ -4,8 +4,8 @@ uses
   Vcl.SvcMgr,
   IdZLib in '..\..\Objects\Patch\IdZLib.pas',
   uRessource in '..\Shared\uRessource.pas',
-  uAttribute in '..\Shared\uAttribute.pas',
-  uContent in '..\Shared\uContent.pas',
+  rAttribute in '..\Shared\rAttribute.pas',
+  rContent in '..\Shared\rContent.pas',
   FStepInWebservice in 'FStepInWebservice.pas' {StepInService: TService};
 
 {$R *.RES}

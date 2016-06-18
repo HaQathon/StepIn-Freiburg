@@ -1,4 +1,4 @@
-unit uContent;
+unit rContent;
 
 interface
 
@@ -41,6 +41,9 @@ function TRessource_Content.DELETE(const id: string; jsonResponse: ISuperObject)
    end;
 
 function TRessource_Content.GET(const id: string; jsonResponse: ISuperObject): Boolean;
+
+//uContent.pas fehlte noch --> hier analog attribute nachziehen
+
 //   var
 //    attributeList: TList<TAttribut>;
 //    dbAttribute : TAttributDatenbank;

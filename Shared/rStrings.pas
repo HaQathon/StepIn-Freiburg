@@ -1,14 +1,14 @@
-unit uAttribute;
+unit rStrings;
 
 interface
 
 uses
   XSuperObject,
-  uAttribut,
+  uStrings,
   uRessource;
 
 type
-  TRessource_Attribute = class(TRessource, IRessource)
+  TRessource_Strings = class(TRessource, IRessource)
   private
 
   public
@@ -19,7 +19,7 @@ type
     function PUT(const id: string; const payload: string; jsonResponse: ISuperObject): Boolean;
     function DELETE(const id: string; jsonResponse: ISuperObject): Boolean;
 
-    const RESSOURCENAME = 'attributes';
+    const RESSOURCENAME = 'strings';
   end;
 
 implementation
@@ -35,59 +35,59 @@ uses
 
 { TRessource_Attribute }
 
-function TRessource_Attribute.DELETE(const id: string; jsonResponse: ISuperObject): Boolean;
+function TRessource_Strings.DELETE(const id: string; jsonResponse: ISuperObject): Boolean;
    begin
     result := False;
    end;
 
-function TRessource_Attribute.GET(const id: string; jsonResponse: ISuperObject): Boolean;
+function TRessource_Strings.GET(const id: string; jsonResponse: ISuperObject): Boolean;
    var
-    attributeList: TList<TAttribut>;
-    dbAttribute : TAttributDatenbank;
-    Attribute: ISuperObject;
-    attribut:  TAttribut;
+    stringList: TList<TString>;
+    dbString : TStringDatenbank;
+    Strings: ISuperObject;
+    aString:  TString;
    begin
-    dbAttribute := TAttributDatenbank.Create('StepIn');
+    dbString := TStringDatenbank.Create('StepIn');
     try
       if id.IsEmpty then
        begin
-        attributeList := dbAttribute.getAllAttribute;
+        stringList := dbString.getAllAttribute;
         try
-          for attribut in attributeList do
+          for astring in stringList do
              begin
-              Attribute := SO();
-              Attribute := attribut.AsJSONObject;
+              Strings := SO();
+              Strings := aString.AsJSONObject;
 
-              jsonResponse.O['data'].A['attributes'].Add(Attribute);
+              jsonResponse.O['data'].A['strings'].Add(Strings);
              end;
           result := True;
         finally
-          attributeList.Free;
+          stringList.Free;
         end;
        end
     else
        begin
-        attribut := dbAttribute.get(strtointdef(id,0));
-        if assigned(attribut) then
+        astring := dbString.get(id);
+        if assigned(astring) then
            begin
-              Attribute := SO();
-              Attribute := attribut.AsJSONObject;
+              Strings := SO();
+              Strings := aString.AsJSONObject;
 
-              jsonResponse.O['data'].A['attributes'].Add(Attribute);
+              jsonResponse.O['data'].A['strings'].Add(Strings);
             result := True;
            end;
        end;
     finally
-     dbAttribute.Free;
+     dbString.Free;
     end;
    end;
 
-function TRessource_Attribute.GetRessourceName: string;
+function TRessource_Strings.GetRessourceName: string;
    begin
     result := RESSOURCENAME;
    end;
 
-function TRessource_Attribute.POST(const id, payload: string; jsonResponse: ISuperObject): Boolean;
+function TRessource_Strings.POST(const id, payload: string; jsonResponse: ISuperObject): Boolean;
    var
     jsonRequest: ISuperObject;
    begin
@@ -105,7 +105,7 @@ function TRessource_Attribute.POST(const id, payload: string; jsonResponse: ISup
        end;
    end;
 
-function TRessource_Attribute.PUT(const id, payload: string; jsonResponse: ISuperObject): Boolean;
+function TRessource_Strings.PUT(const id, payload: string; jsonResponse: ISuperObject): Boolean;
    begin
     result := False;
    end;

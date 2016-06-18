@@ -71,17 +71,28 @@ uses
   System.Classes,
   System.DateUtils,
   System.IOUtils,
-  uAttribute,
-  uContent,
+  rAttribute,
+  rContent,
+  rStrings,
+  rTask,
+  rTaskContentRel,
+  rAttributeRel,
+  rSystemStrings,
   System.Generics.Defaults;
 
 { TRessourceFactory }
 
 class function TRessourceFactory.CreateRessource(const RessouceName: string; const AContext: TIdContext; const ARequestInfo: TIdHTTPRequestInfo; const AResponseInfo: TIdHTTPResponseInfo): IRessource;
    begin
-    case IndexText(RessouceName, [TRessource_Attribute.RESSOURCENAME, TRessource_Content.RESSOURCENAME]) of
+    case IndexText(RessouceName, [TRessource_Attribute.RESSOURCENAME, TRessource_Content.RESSOURCENAME,
+                                  TRessource_Strings.RESSOURCENAME, TRessource_SystemStrings.RESSOURCENAME,
+                                  TRessource_AttributeRel.RESSOURCENAME, TRessource_TaskContentRel.RESSOURCENAME, TRessource_Task.RESSOURCENAME]) of
       0: result := TRessource_Attribute.Create(AContext, ARequestInfo, AResponseInfo);
       1: result := TRessource_Content.Create(AContext, ARequestInfo, AResponseInfo);
+      3: result := TRessource_SystemStrings.Create(AContext, ARequestInfo, AResponseInfo);
+      4: result := TRessource_AttributeRel.Create(AContext, ARequestInfo, AResponseInfo);
+      5: result := TRessource_TaskContentRel.Create(AContext, ARequestInfo, AResponseInfo);
+      6: result := TRessource_Task.Create(AContext, ARequestInfo, AResponseInfo);
       else result := NIL;
     end;
    end;

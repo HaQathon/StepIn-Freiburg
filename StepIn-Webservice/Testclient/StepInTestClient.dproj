@@ -267,8 +267,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\Shared\uContent.pas"/>
-        <DCCReference Include="..\..\Shared\uAttribute.pas"/>
+        <DCCReference Include="..\..\Shared\rContent.pas"/>
+        <DCCReference Include="..\..\Shared\rAttribute.pas"/>
         <DCCReference Include="..\..\Shared\uRessource.pas"/>
         <DCCReference Include="..\..\Shared\xSuperObject.pas"/>
         <DCCReference Include="..\..\Shared\xSuperJSON.pas"/>
@@ -357,12 +357,12 @@
                         <RemoteName>edb.db</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
-                    <Platform Name="iOSDevice32">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal</RemoteDir>
                         <RemoteName>edb.db</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
-                    <Platform Name="Android">
-                        <RemoteDir>.\assets\internal</RemoteDir>
+                    <Platform Name="iOSDevice32">
                         <RemoteName>edb.db</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -431,12 +431,12 @@
                         <RemoteName>TarifDB.s3db</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
-                    <Platform Name="iOSDevice32">
+                    <Platform Name="Android">
+                        <RemoteDir>.\assets\internal</RemoteDir>
                         <RemoteName>TarifDB.s3db</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
-                    <Platform Name="Android">
-                        <RemoteDir>.\assets\internal</RemoteDir>
+                    <Platform Name="iOSDevice32">
                         <RemoteName>TarifDB.s3db</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -479,27 +479,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployClass Name="DependencyModule">
-                    <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
-                    </Platform>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <RemoteDir>Contents\MacOS</RemoteDir>
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                    <Platform Name="iOSSimulator">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
@@ -861,12 +846,27 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
                     <Platform Name="iOSDevice64">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
                     </Platform>
                 </DeployClass>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
