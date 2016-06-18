@@ -3,7 +3,7 @@ unit uHlfsFktn;
 interface
 
 uses
-<<<<<<< HEAD
+
   {$ifdef mswindows}
   windows,
   {$endif}
@@ -12,11 +12,6 @@ uses
 
 function getHomePath(): string;
 function GetLanguageID: String;
-=======
-  System.IOUtils;
-
-function getHomePath(): string;
->>>>>>> origin/master
 
 implementation
 
@@ -29,7 +24,6 @@ function getHomePath(): string;
      {$endif}
    end;
 
-<<<<<<< HEAD
 function GetLanguageID: String;
 {$IFDEF IOS}
    var
@@ -64,6 +58,4 @@ function GetLanguageID: String;
 {$ENDIF}
     end;
 
-=======
->>>>>>> origin/master
 end.
