@@ -65,7 +65,7 @@ procedure TformWillkommen.FormSaveState(Sender: TObject);
 { ============================================================================ }
 procedure TformWillkommen.imStartButtonClick(Sender: TObject);
    var
-    Main : TForm2;
+    Main : TformMain;
     Fragen :  TfFragen;
    begin
     if ErsterAufruf = false then
@@ -75,7 +75,7 @@ procedure TformWillkommen.imStartButtonClick(Sender: TObject);
        end
     else
        begin
-        Main := TForm2.Create(Self);
+        Main := TformMain.Create(Self);
         Main.Show;
        end;
 
