@@ -34,7 +34,8 @@ procedure TForm1.btn_AttributeClick(Sender: TObject);
     restClient := TStepInWSClient.Create;
     try
       ajsonResponse := restClient.GetAttribute('');
-      showmessage(ajsonResponse.O['data'].A['attributes'].S[0]);
+      ajsonResponse.
+      showmessage(ajsonResponse.O['data'].A['attributes'].[0].as);
     finally
       ajsonResponse := NIL;
       restClient.Free;

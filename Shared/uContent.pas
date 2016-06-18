@@ -41,49 +41,45 @@ function TRessource_Content.DELETE(const id: string; jsonResponse: ISuperObject)
    end;
 
 function TRessource_Content.GET(const id: string; jsonResponse: ISuperObject): Boolean;
-   var
-    contentList: TFileList;
-    fileInfo: TFileInfo;
-    fileName: string;
-    Content: string;
+//   var
+//    attributeList: TList<TAttribut>;
+//    dbAttribute : TAttributDatenbank;
+//    Attribute: ISuperObject;
+//    attribut:  TAttribut;
    begin
-    if id.IsEmpty then
-       begin
-        TLogger.Log('GET');
-        Content := 'hello world';
-        jsonResponse.O['data'].A['content'].Add(Content);
-        contentList := TFileList.Create;
-        try
-          if ListFiles(TPath.Combine(ExtractFilePath(ParamStr(0)), 'content'), 'content*.xml', contentList) > 0 then
-             begin
-              for fileInfo in contentList do
-                 begin
-//                  Content := SO();
+//    dbAttribute := TAttributDatenbank.Create('StepIn');
+//    try
+//      if id.IsEmpty then
+//       begin
+//        attributeList := dbAttribute.getAllAttribute;
+//        try
+//          for attribut in attributeList do
+//             begin
+//              Attribute := SO();
+//              Attribute := attribut.AsJSONObject;
 //
-//                  Content.S['id']   := ChangeFileExt(ExtractFileName(fileInfo.Key), '');
-//                  Content.D['date'] := fileInfo.Value;
-
-
-                  jsonResponse.O['data'].A['attributes'].Add(Content);
-                 end;
-             end;
-          result := True;
-        finally
-          contentList.Free;
-        end;
-       end
-    else
-       begin
-        fileName := TPath.Combine(ExtractFilePath(ParamStr(0)), TPath.Combine('schichten', id + '.xml'));
-        if FileExists(fileName) then
-           begin
-            jsonResponse.O['data'].S['id']      := ChangeFileExt(ExtractFileName(fileName), '');
-            jsonResponse.O['data'].D['date']    := GetFileDate(fileName);
-            jsonResponse.O['data'].S['content'] := ReadTextFile(fileName);
-
-            result := True;
-           end;
-       end;
+//              jsonResponse.O['data'].A['attributes'].Add(Attribute);
+//             end;
+//          result := True;
+//        finally
+//          attributeList.Free;
+//        end;
+//       end
+//    else
+//       begin
+//        attribut := dbAttribute.get(strtointdef(id,0));
+//        if assigned(attribut) then
+//           begin
+//              Attribute := SO();
+//              Attribute := attribut.AsJSONObject;
+//
+//              jsonResponse.O['data'].A['attributes'].Add(Attribute);
+//            result := True;
+//           end;
+//       end;
+//    finally
+//     dbAttribute.Free;
+//    end;
    end;
 
 function TRessource_Content.GetRessourceName: string;

@@ -210,7 +210,7 @@ procedure TStepInService.IdHUSSTServerCommandGet(AContext: TIdContext; ARequestI
 
       payload := DecodeRequest(ARequestInfo);
 
-      Match := TRegEx.Match(ARequestInfo.Document, '^\/HUSST\/([\w.]+)\/(\w+)\/?(\w*)', [roIgnoreCase]);
+      Match := TRegEx.Match(ARequestInfo.Document, '^\/data\/([\w.]+)\/(\w+)\/?(\w*)', [roIgnoreCase]);
 
       if Match.Success then
          begin

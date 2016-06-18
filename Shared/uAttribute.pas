@@ -4,7 +4,7 @@ interface
 
 uses
   XSuperObject,
-
+  uAttribut,
   uRessource;
 
 type
@@ -29,7 +29,7 @@ uses
   System.IOUtils,
 
   Winapi.ActiveX,
-
+  System.Generics.Collections,
   Xml.XMLIntf,
   Xml.XMLDoc;
 
@@ -42,26 +42,23 @@ function TRessource_Attribute.DELETE(const id: string; jsonResponse: ISuperObjec
 
 function TRessource_Attribute.GET(const id: string; jsonResponse: ISuperObject): Boolean;
    var
-    attributeList: TFileList;
-    fileInfo: TFileInfo;
-    fileName: string;
+    attributeList: TList<TAttribut>;
+    dbAttribute : TAttributDatenbank;
     Attribute: ISuperObject;
+    attribut:  TAttribut;
    begin
-    if id.IsEmpty then
+    dbAttribute := TAttributDatenbank.Create('StepIn');
+    try
+      if id.IsEmpty then
        begin
-        attributeList := TFileList.Create;
+        attributeList := dbAttribute.getAllAttribute;
         try
-          if ListFiles(TPath.Combine(ExtractFilePath(ParamStr(0)), 'schichten'), 'schichten_*.xml', attributeList) > 0 then
+          for attribut in attributeList do
              begin
-              for fileInfo in attributeList do
-                 begin
-                  Attribute := SO();
+              Attribute := SO();
+              Attribute := attribut.AsJSONObject;
 
-                  Attribute.S['id']   := ChangeFileExt(ExtractFileName(fileInfo.Key), '');
-                  Attribute.D['date'] := fileInfo.Value;
-
-                  jsonResponse.O['data'].A['attributes'].Add(Attribute);
-                 end;
+              jsonResponse.O['data'].A['attributes'].Add(Attribute);
              end;
           result := True;
         finally
@@ -70,16 +67,19 @@ function TRessource_Attribute.GET(const id: string; jsonResponse: ISuperObject):
        end
     else
        begin
-        fileName := TPath.Combine(ExtractFilePath(ParamStr(0)), TPath.Combine('schichten', id + '.xml'));
-        if FileExists(fileName) then
+        attribut := dbAttribute.get(strtointdef(id,0));
+        if assigned(attribut) then
            begin
-            jsonResponse.O['data'].S['id']      := ChangeFileExt(ExtractFileName(fileName), '');
-            jsonResponse.O['data'].D['date']    := GetFileDate(fileName);
-            jsonResponse.O['data'].S['content'] := ReadTextFile(fileName);
+              Attribute := SO();
+              Attribute := attribut.AsJSONObject;
 
+              jsonResponse.O['data'].A['attributes'].Add(Attribute);
             result := True;
            end;
        end;
+    finally
+     dbAttribute.Free;
+    end;
    end;
 
 function TRessource_Attribute.GetRessourceName: string;
@@ -90,7 +90,6 @@ function TRessource_Attribute.GetRessourceName: string;
 function TRessource_Attribute.POST(const id, payload: string; jsonResponse: ISuperObject): Boolean;
    var
     jsonRequest: ISuperObject;
-    I1: Integer;
    begin
     jsonRequest := SO(payload);
 

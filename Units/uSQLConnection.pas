@@ -6,7 +6,7 @@ uses
   Uni;
 
 type
-  TConnectionType = (ctSQLite, ctIBLite);
+  TConnectionType = (ctSQLite, ctIBLite, ctMySQL);
 
   TSQLConnection = class(TUniConnection)
   private
@@ -20,7 +20,7 @@ implementation
 
 uses
   System.SysUtils,
-  UniProvider, SqLiteUniProvider;
+  UniProvider, SqLiteUniProvider, MySQLUniProvider;
 
 { TSQLConnection }
 
@@ -34,6 +34,12 @@ constructor TSQLConnection.Create(ConnectionType: TConnectionType);
       ctSQLite:
         begin
           ProviderName := 'SQLite';
+        end;
+      ctMySQL:
+        begin
+          ProviderName := 'MySQL';
+          Username := 'StepIn';
+          Password := 'stepin';
         end;
     else
       raise Exception.Create('Unbekannter ConnectionType!');

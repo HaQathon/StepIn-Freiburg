@@ -60,18 +60,32 @@ const
 
 constructor TAttributDatenbank.Create(const Database: string);
    begin
+{$ifdef Webservice}
+    FSQLConnection := TSQLConnection.Create(ctmySQL);
+{$else}
     FSQLConnection := TSQLConnection.Create(ctSQLite);
+{$endif}
     FSQLConnection.Database := Database;
+
+{$ifdef Webservice}
+
+{$else}
     if not FileExists(FSQLConnection.Database) then
        begin
         FSQLConnection.SpecificOptions.Add('ForceCreateDatabase=true');
        end;
-    FSQLConnection.Open;
+{$endif}
 
+    FSQLConnection.Open;
+{$ifdef Webservice}
+
+{$else}
     FSQLConnection.ExecSQL('CREATE TABLE IF NOT EXISTS ' + cTABLE_NAME + ' ( ' +
        cID + ' INTEGER PRIMARY KEY AUTOINCREMENT, ' +
        cATTRIBUT_NAME + ' TEXT NOT NULL, ' +
        cVERWENDET + ' INTEGER NOT NULL' + ')');
+{$endif}
+
   end;
 
 { ============================================================================ }
@@ -96,7 +110,11 @@ procedure TAttribut.fillFields(query: TUniQuery);
    begin
     id := query.FieldByName(AttributDatenbank.cID).AsInteger;
     AttributName := query.FieldByName(AttributDatenbank.cAttribut_NAME).AsString;
+{$ifdef Webservice}
+    //brauchts aufm server net
+{$else}
     Verwendet := query.FieldByName(AttributDatenbank.cVerwendet).AsBoolean;
+{$endif}
 
    end;
 
@@ -106,7 +124,12 @@ procedure TAttribut.fillParamsOfQuery(query: TUniQuery);
    begin
     query.ParamByName(AttributDatenbank.cID).AsInteger := id;
     query.ParamByName(AttributDatenbank.cAttribut_NAME).asString := AttributName;
+{$ifdef Webservice}
+    //brauchts aufm server net
+{$else}
     query.ParamByName(AttributDatenbank.cVerwendet).AsBoolean := Verwendet;
+{$endif}
+
    end;
 
 { ============================================================================ }
@@ -253,7 +276,11 @@ function TAttribut.Copy: TAttribut;
 { ============================================================================ }
 
 initialization
-  AttributDatenbank := TAttributDatenbank.Create(TPath.Combine(extractFilePath(paramStr(0)), CONTENT_URI_ATTRIBUT));
+{$ifdef Webservice}
+    AttributDatenbank := TAttributDatenbank.Create('STEPIN');
+{$else}
+    AttributDatenbank := TAttributDatenbank.Create(TPath.Combine(extractFilePath(paramStr(0)), CONTENT_URI_ATTRIBUT));
+{$endif}
 
 { ============================================================================ }
 

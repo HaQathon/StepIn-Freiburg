@@ -31,14 +31,14 @@ uses
 { THUSSTWSClient }
 
 const
-STEP_IN_SERVER_URL = 'http://localhost:7373/HUSST/V1';
+STEP_IN_SERVER_URL = 'http://localhost:7373/data/V1';
 
 
 constructor TStepInWSClient.Create;
    var
     CompressionType: TCompressionType;
    begin
-    CompressionType := TCompressionType.ctGzip;
+    CompressionType := TCompressionType.ctNone;
     //CompressionType := TCompressionType.ctNone;
 
     FRESTClient := TRESTClient.Create(STEP_IN_SERVER_URL, 'StepIn', 'testPassword', 'OS Version, App Version', CompressionType, false);
@@ -58,7 +58,7 @@ function TStepInWSClient.sendContent(aJSONRequest: ISuperObject): ISuperObject;
 
 function TStepInWSClient.sendAttribute(aJSONRequest: ISuperObject): ISuperObject;
    begin
-    result := FRESTClient.POST('attribute', aJSONRequest).JSONResponse;
+    result := FRESTClient.POST('attributes', aJSONRequest).JSONResponse;
    end;
 
 function TStepInWSClient.getContent(const id: string): ISuperObject;
@@ -68,7 +68,7 @@ function TStepInWSClient.getContent(const id: string): ISuperObject;
 
 function TStepInWSClient.GetAttribute(const id: string): ISuperObject;
    begin
-    result := FRESTClient.GET('attribute').GetJsonResponse();
+    result := FRESTClient.GET('attributes').GetJsonResponse();
    end;
 
 end.

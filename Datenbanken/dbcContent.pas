@@ -29,9 +29,8 @@ unit dbcContent;
 interface
 {================================================================}
 
-uses 
-  DB, 
-  PlanBKEPServer;
+uses
+  DB;
 
 type
   
