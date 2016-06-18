@@ -5,20 +5,23 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,Fmain, FMX.Objects,
-  FMX.Layouts, uFrmFragen;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani, FMX.Objects,
+  FMX.Layouts, FMX.ListBox, System.ImageList, FMX.ImgList;
 
 type
   TformWillkommen = class(TForm)
     laStepIn: TLabel;
-    imTitelBild: TImage;
     laWillkommen: TLabel;
     laBeantworteFragen: TLabel;
     imStartButton: TImage;
     layTitelBild: TLayout;
+    StyleBook1: TStyleBook;
+    ImageList1: TImageList;
+    Image1: TImage;
     procedure FormCreate(Sender: TObject);
     procedure imStartButtonClick(Sender: TObject);
     procedure FormSaveState(Sender: TObject);
+    procedure layTitelBildClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -27,11 +30,16 @@ type
 
 var
   formWillkommen: TformWillkommen;
-  ErsterAufruf  : boolean;
+  ErsterAufruf : boolean = true;
 
 implementation
 
 {$R *.fmx}
+
+uses
+  uSetDimensions,
+  uFrmFragen,
+  uFrmMain;
 
 procedure TformWillkommen.FormCreate(Sender: TObject);
    var
@@ -39,7 +47,6 @@ procedure TformWillkommen.FormCreate(Sender: TObject);
    begin
     SaveState.StoragePath := GetHomePath;      //anpassen an hilfsfunktion
     r := TBinaryReader.Create(SaveState.Stream);
-    ErsterAufruf := true;
     try
       if SaveState.Stream.Size > 0 then
          begin
@@ -48,6 +55,7 @@ procedure TformWillkommen.FormCreate(Sender: TObject);
     finally
       r.Free;
     end;
+    setWillkommenDimensions;
    end;
 { ============================================================================ }
 procedure TformWillkommen.FormSaveState(Sender: TObject);
@@ -64,22 +72,27 @@ procedure TformWillkommen.FormSaveState(Sender: TObject);
    end;
 { ============================================================================ }
 procedure TformWillkommen.imStartButtonClick(Sender: TObject);
-   var
-    Main : TForm2;
-    Fragen :  TfFragen;
    begin
-    if ErsterAufruf = false then
+    if ErsterAufruf = true then
        begin
-        Fragen := TfFragen.Create(self);
-        Fragen.Show;
+        ErsterAufruf := false;
+        formFragen.Show;
        end
     else
        begin
-        Main := TForm2.Create(Self);
-        Main.Show;
+        formMain.Show;
        end;
 
    end;
+procedure TformWillkommen.layTitelBildClick(Sender: TObject);
+begin
+
+end;
+
+
+
+
+
 { ============================================================================ }
 
 end.

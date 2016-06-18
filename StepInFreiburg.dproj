@@ -6,7 +6,7 @@
         <MainSource>StepInFreiburg.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Android</Platform>
         <TargetedPlatforms>1113</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -258,7 +258,7 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Fmain.pas">
+        <DCCReference Include="uFrmMain.pas">
             <Form>Form2</Form>
         </DCCReference>
         <DCCReference Include="Datenbanken\uTask.pas"/>
@@ -275,9 +275,14 @@
         <DCCReference Include="Datenbanken\uTaskContentRel.pas"/>
         <DCCReference Include="Units\uHlfsFktn.pas"/>
         <DCCReference Include="uFrmFragen.pas">
-            <Form>fFragen</Form>
+            <Form>formFragen</Form>
+        </DCCReference>
+        <DCCReference Include="uFrmAufgabeHinzufuegen.pas">
+            <Form>formAufgabeHinzufuegen</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="Datenbanken\uFragen.pas"/>
+        <DCCReference Include="Datenbanken\uUnterFragen.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

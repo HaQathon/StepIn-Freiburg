@@ -115,7 +115,7 @@ procedure TTask.fillFields(query: TUniQuery);
 
 procedure TTask.fillParamsOfQuery(query: TUniQuery);
    begin
-    query.ParamByName(TaskDatenbank.cID).AsInteger := id;
+//    query.ParamByName(TaskDatenbank.cID).AsInteger := id;
     query.ParamByName(TaskDatenbank.cTASK_NAME).AsString := taskName;
     query.ParamByName(TaskDatenbank.cTASK_INFO).asString := taskInfo;
     query.ParamByName(TaskDatenbank.cERLEDIGT).asInteger := erledigt;

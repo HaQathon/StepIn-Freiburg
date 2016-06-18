@@ -1,4 +1,4 @@
-object fFragen: TfFragen
+object formFragen: TformFragen
   Left = 0
   Top = 0
   Caption = 'Form1'
@@ -6,39 +6,43 @@ object fFragen: TfFragen
   ClientWidth = 464
   Fill.Color = xFF3F51B5
   Fill.Kind = Solid
+  StyleBook = formWillkommen.StyleBook1
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 3
-  object Header1: THeader
-    Sides = [Top, Left, Bottom, Right]
-    Anchors = [akTop]
-    Position.X = -8.000000000000000000
-    Size.Width = 473.000000000000000000
-    Size.Height = 73.000000000000000000
+  object lbFragen: TListBox
+    Align = Client
+    Size.Width = 464.000000000000000000
+    Size.Height = 673.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 2
-  end
-  object lbl_title: TLabel
-    StyledSettings = [Family, Size]
-    Position.X = 152.000000000000000000
-    Size.Width = 169.000000000000000000
-    Size.Height = 65.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Font.Family = 'Roboto'
-    TextSettings.Font.StyleExt = {00040000000000000002000000}
-    TextSettings.FontColor = claWhite
-    Text = 'StepIn Freiburg'
-  end
-  object ListBox1: TListBox
-    Position.X = 88.000000000000000000
-    Position.Y = 208.000000000000000000
-    TabOrder = 4
+    TabOrder = 3
     DisableFocusEffect = True
     DefaultItemStyles.ItemStyle = ''
     DefaultItemStyles.GroupHeaderStyle = ''
     DefaultItemStyles.GroupFooterStyle = ''
-    Viewport.Width = 200.000000000000000000
-    Viewport.Height = 200.000000000000000000
+    Viewport.Width = 464.000000000000000000
+    Viewport.Height = 673.000000000000000000
+  end
+  object paHeader: TPanel
+    Align = Top
+    Size.Width = 464.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'panelHeaderStyle'
+    TabOrder = 4
+    object laFragen: TLabel
+      Align = Client
+      StyledSettings = [Family, Size]
+      Size.Width = 464.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00040000000000000002000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Fragen'
+    end
   end
 end

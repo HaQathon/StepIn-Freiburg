@@ -15,7 +15,7 @@ uses
 
 type
   TEntityBase = class
-    procedure fillParamsOfQuery(query: TUniQuery); virtual;abstract;
+    procedure fillParamsOfQuery(query: TUniQuery); virtual; abstract;
   end;
 
 

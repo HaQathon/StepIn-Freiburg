@@ -11,11 +11,11 @@ type
   private // Felder private, durch property veröffentlichen
     fId: Integer;
     fAttributName: string;
-    fVerwendet: Boolean;
+    fVerwendet: integer;
   public
     property id: integer read fID write fID;
     property AttributName: string read fAttributname write fAttributName;
-    property Verwendet: Boolean read fVerwendet write fVerwendet;
+    property Verwendet: integer read fVerwendet write fVerwendet;
 
     procedure fillFields(query: TUniQuery);
     procedure addToDatabase;
@@ -113,7 +113,7 @@ procedure TAttribut.fillFields(query: TUniQuery);
 {$ifdef Webservice}
     //brauchts aufm server net
 {$else}
-    Verwendet := query.FieldByName(AttributDatenbank.cVerwendet).AsBoolean;
+    Verwendet := query.FieldByName(AttributDatenbank.cVerwendet).asInteger;
 {$endif}
 
    end;
@@ -122,12 +122,12 @@ procedure TAttribut.fillFields(query: TUniQuery);
 
 procedure TAttribut.fillParamsOfQuery(query: TUniQuery);
    begin
-    query.ParamByName(AttributDatenbank.cID).AsInteger := id;
+//    query.ParamByName(AttributDatenbank.cID).AsInteger := id;
     query.ParamByName(AttributDatenbank.cAttribut_NAME).asString := AttributName;
 {$ifdef Webservice}
     //brauchts aufm server net
 {$else}
-    query.ParamByName(AttributDatenbank.cVerwendet).AsBoolean := Verwendet;
+    query.ParamByName(AttributDatenbank.cVerwendet).AsInteger := Verwendet;
 {$endif}
 
    end;
@@ -279,7 +279,7 @@ initialization
 {$ifdef Webservice}
     AttributDatenbank := TAttributDatenbank.Create('STEPIN');
 {$else}
-    AttributDatenbank := TAttributDatenbank.Create(TPath.Combine(extractFilePath(paramStr(0)), CONTENT_URI_ATTRIBUT));
+    AttributDatenbank := TAttributDatenbank.Create(TPath.Combine(GetHomePath(), CONTENT_URI_ATTRIBUT));
 {$endif}
 
 { ============================================================================ }

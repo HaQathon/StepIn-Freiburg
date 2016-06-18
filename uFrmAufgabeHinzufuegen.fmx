@@ -1,0 +1,83 @@
+object formAufgabeHinzufuegen: TformAufgabeHinzufuegen
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 725
+  ClientWidth = 441
+  StyleBook = formWillkommen.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object paHeader: TPanel
+    Align = Top
+    Size.Width = 441.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'panelHeaderStyle'
+    TabOrder = 1
+    object laAufgaben: TLabel
+      Align = Client
+      StyledSettings = [Family, Size]
+      Size.Width = 441.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00040000000000000002000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Aufgabe hinzuf'#252'gen'
+    end
+  end
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 441.000000000000000000
+    Size.Height = 665.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object eTitel: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 0
+      KeyboardType = Alphabet
+      ReturnKeyType = Done
+      TextSettings.HorzAlign = Center
+      Size.Width = 441.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Aufgaben Titel'
+      KillFocusByReturn = True
+    end
+    object memoBeschreibung: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      KeyboardType = Alphabet
+      Align = Client
+      Size.Width = 441.000000000000000000
+      Size.Height = 520.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 433.000000000000000000
+      Viewport.Height = 512.000000000000000000
+    end
+    object btnAufgabeSpeichern: TButton
+      Align = Bottom
+      Position.Y = 584.000000000000000000
+      Size.Width = 441.000000000000000000
+      Size.Height = 81.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Speichern'
+      OnClick = btnAufgabeSpeichernClick
+    end
+    object cbAttributAuswahl: TComboBox
+      Align = Bottom
+      Position.Y = 552.000000000000000000
+      Size.Width = 441.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+    end
+  end
+end
