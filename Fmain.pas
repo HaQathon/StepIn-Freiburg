@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListView, FMX.MultiView, FMX.Edit,
-  FMX.Objects, FMX.Header;
+  FMX.Objects;
 
 type
   TForm2 = class(TForm)
@@ -16,13 +16,8 @@ type
     Edit1: TEdit;
     ListView2: TListView;
     Image1: TImage;
-    Header1: THeader;
-    lbl_title: TLabel;
-    btn_OpenMultiView: TButton;
-    head_Mview: THeader;
     Button1: TButton;
-    Aufgaben: TLabel;
-    procedure btn_OpenMultiviewClick(Sender: TObject);
+    Label1: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private-Deklarationen }
@@ -36,19 +31,14 @@ var
 implementation
 
 {$R *.fmx}
-{$R *.LgXhdpiPh.fmx ANDROID}
-{$R *.Surface.fmx MSWINDOWS}
-
-procedure TForm2.btn_OpenMultiviewClick(Sender: TObject);
- begin
-  MultiView1.ShowMaster;
- end;
-
+uses
+  uTask;
 
 procedure TForm2.Button1Click(Sender: TObject);
- begin
-  MultiView1.HideMaster;
-
- end;
+var task: TTask;
+  begin
+   task := TaskDatenbank.get(1);
+   Label1.Text := task.taskInfo;
+  end;
 
 end.
