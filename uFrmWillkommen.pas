@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani,Fmain, FMX.Objects,
-  FMX.Layouts;
+  FMX.Layouts, uFrmFragen;
 
 type
   TformWillkommen = class(TForm)
@@ -66,10 +66,12 @@ procedure TformWillkommen.FormSaveState(Sender: TObject);
 procedure TformWillkommen.imStartButtonClick(Sender: TObject);
    var
     Main : TForm2;
+    Fragen :  TfFragen;
    begin
     if ErsterAufruf = false then
        begin
-       //hier fragen anzeigen
+        Fragen := TfFragen.Create(self);
+        Fragen.Show;
        end
     else
        begin
