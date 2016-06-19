@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.396,=C:\Users\sp\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.754,C:\highQ\Projects\HaQathon\StepIn-Webservice\FStepInWebservice.pas=C:\Users\sp\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.365,C:\highQ\Projects\HaQathon\StepIn-Webservice\StepInWebservice.dproj=C:\Users\sp\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.446,=C:\highQ\Projects\HaQathon\StepIn-Webservice\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.754,C:\highQ\Projects\HaQathon\StepIn-Webservice\FStepInWebservice.dfm=C:\Users\sp\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

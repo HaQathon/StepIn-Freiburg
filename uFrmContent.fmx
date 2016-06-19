@@ -1,0 +1,66 @@
+object FrmContent: TFrmContent
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 708
+  ClientWidth = 430
+  Fill.Color = xFF3F51B5
+  Fill.Kind = Solid
+  StyleBook = formWillkommen.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    StyledSettings = [Family, Style, FontColor]
+    TextSettings.Font.Size = 8.000000000000000000
+    TextSettings.WordWrap = True
+    Align = Client
+    Size.Width = 430.000000000000000000
+    Size.Height = 648.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 422.000000000000000000
+    Viewport.Height = 640.000000000000000000
+  end
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 430.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'panelstyle'
+    TabOrder = 4
+    object laAufgaben: TLabel
+      Align = Client
+      StyledSettings = [Family, Size]
+      Size.Width = 430.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00040000000000000002000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Infos'
+      object btnBack: TButton
+        Align = Left
+        Images = formWillkommen.ImageList1
+        ImageIndex = 7
+        Size.Width = 57.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'customButtonStyle'
+        TabOrder = 0
+        Text = 'btnBack'
+        OnClick = btnBackClick
+      end
+    end
+  end
+  object WebBrowser1: TWebBrowser
+    Align = Client
+    Size.Width = 430.000000000000000000
+    Size.Height = 648.000000000000000000
+    Size.PlatformDefault = False
+  end
+end

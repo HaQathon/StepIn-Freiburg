@@ -1,0 +1,80 @@
+object formFragen: TformFragen
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 639
+  ClientWidth = 464
+  StyleBook = formWillkommen.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object paHeader: TPanel
+    Align = Top
+    Size.Width = 464.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'panelHeaderStyle'
+    TabOrder = 3
+    object laFragen: TLabel
+      Align = Client
+      StyledSettings = [Family, Size]
+      Size.Width = 464.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.StyleExt = {00040000000000000002000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Fragen'
+    end
+  end
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 464.000000000000000000
+    Size.Height = 579.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object VertScrollBox1: TVertScrollBox
+      Align = Client
+      Size.Width = 464.000000000000000000
+      Size.Height = 499.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 459.000000000000000000
+      Viewport.Height = 499.000000000000000000
+      object Layout2: TLayout
+        Align = Top
+        Size.Width = 459.000000000000000000
+        Size.Height = 1000.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+      end
+    end
+    object Panel1: TPanel
+      Align = Bottom
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 509.000000000000000000
+      Size.Width = 444.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnClick = Button1Click
+      object Label1: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Size.Width = 444.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'Best'#228'tigen'
+      end
+    end
+  end
+end
